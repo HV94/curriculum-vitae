@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Curriculum Vitae - Valentyn Haidukov</title>
+  <meta name="description" content="Visualizza e scarica il Curriculum Vitae ufficiale di Valentyn Haidukov (Web Developer, Gestione Dati, Categorie Protette L. 68/99).">
+
+  <!-- Open Graph / LinkedIn / Facebook / WhatsApp -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://hv94.github.io/curriculum-vitae/">
+  <meta property="og:title" content="Curriculum Vitae - Valentyn Haidukov">
+  <meta property="og:description" content="Visualizza e scarica la copia ufficiale in alta risoluzione (PDF vettoriale). Categorie Protette L. 68/99.">
+  <meta property="og:image" content="https://hv94.github.io/curriculum-vitae/anteprima.png">
+  <meta property="og:image:width" content="1000">
+  <meta property="og:image:height" content="1400">
+  <meta property="og:image:type" content="image/png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Curriculum Vitae - Valentyn Haidukov">
+  <meta name="twitter:description" content="Visualizza e scarica la copia ufficiale in alta risoluzione (PDF vettoriale). Categorie Protette L. 68/99.">
+  <meta name="twitter:image" content="https://hv94.github.io/curriculum-vitae/anteprima.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #2563eb;
+      --primary-hover: #1d4ed8;
+      --bg: #0f172a;
+      --surface: #1e293b;
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --border: #334155;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 1.5rem 1rem 3rem;
+    }
+
+    .header {
+      width: 100%;
+      max-width: 900px;
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(37, 99, 235, 0.2);
+      color: #60a5fa;
+      border: 1px solid rgba(59, 130, 246, 0.4);
+      padding: 0.35rem 0.85rem;
+      border-radius: 9999px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-bottom: 0.85rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 0.4rem;
+      letter-spacing: -0.02em;
+    }
+
+    .subtitle {
+      font-size: 1rem;
+      color: var(--text-muted);
+      margin-bottom: 1.25rem;
+    }
+
+    .actions-bar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.4rem;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background-color: var(--primary);
+      color: #ffffff;
+      box-shadow: 0 4px 14px rgba(37, 99, 235, 0.4);
+    }
+
+    .btn-primary:hover {
+      background-color: var(--primary-hover);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      background-color: var(--surface);
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+
+    .btn-outline:hover {
+      background-color: var(--border);
+      transform: translateY(-2px);
+    }
+
+    .viewer-container {
+      width: 100%;
+      max-width: 900px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1rem;
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+      display: flex;
+      justify-content: center;
+    }
+
+    .viewer-container img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .footer {
+      margin-top: 2.5rem;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    .footer a {
+      color: #60a5fa;
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <div class="badge">Documento Ufficiale</div>
+    <h1>Valentyn Haidukov</h1>
+    <p class="subtitle">Web Developer & Supporto Digitale &bull; Gestione Dati &bull; Categorie Protette (L. 68/99)</p>
+    
+    <div class="actions-bar">
+      <a href="Curriculum_Valentyn_Haidukov.pdf" download class="btn btn-primary" title="Scarica il file PDF sul tuo computer">
+        📥 Scarica PDF Ufficiale (A4)
+      </a>
+      <a href="Curriculum_Valentyn_Haidukov.pdf" target="_blank" class="btn btn-outline" title="Apri il file a schermo intero nel browser">
+        👁️ Apri a Schermo Intero
+      </a>
+      <a href="https://www.linkedin.com/in/valentyn-haidukov" target="_blank" class="btn btn-outline">
+        💼 Profilo LinkedIn
+      </a>
+      <a href="https://github.com/HV94" target="_blank" class="btn btn-outline">
+        💻 GitHub (@HV94)
+      </a>
+    </div>
+  </header>
+
+  <main class="viewer-container">
+    <img src="anteprima.png" alt="Curriculum Vitae - Valentyn Haidukov">
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2026 Valentyn Haidukov &bull; Città Sant'Angelo (PE) &bull; <a href="mailto:haidukov32@gmail.com">haidukov32@gmail.com</a></p>
+  </footer>
+
+</body>
+</html>
