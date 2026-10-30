@@ -5,13 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Curriculum Vitae & Portfolio - Valentyn Haidukov</title>
-  <meta name="description" content="Visualizza e scarica il Curriculum Vitae ufficiale di Valentyn Haidukov (Web Developer, Gestione Dati, Categorie Protette L. 68/99).">
+  <meta name="description" content="Portfolio e Curriculum Vitae ufficiale di Valentyn Haidukov (Perito Informatico, Junior Web Developer, Gestione Dati, Categorie Protette L. 68/99).">
 
   <!-- Open Graph / LinkedIn / WhatsApp -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://hv94.github.io/curriculum-vitae/">
   <meta property="og:title" content="Curriculum Vitae & Portfolio - Valentyn Haidukov">
-  <meta property="og:description" content="Visualizza il CV ufficiale in alta risoluzione (PDF vettoriale) e naviga i progetti interattivi. Categorie Protette L. 68/99.">
+  <meta property="og:description" content="Visualizza il CV ufficiale in alta risoluzione (PDF vettoriale) e naviga i 3 progetti software interattivi per retail e informatica. Categorie Protette L. 68/99.">
   <meta property="og:image" content="https://hv94.github.io/curriculum-vitae/anteprima.png">
   <meta property="og:image:width" content="1000">
   <meta property="og:image:height" content="1400">
@@ -23,17 +23,19 @@
 
   <style>
     :root {
-      --primary: #2563eb;
-      --primary-hover: #1d4ed8;
-      --bg: #0b132b;
-      --surface: #111d3d;
-      --surface-elevated: #1c2b54;
-      --border: #233566;
+      --primary: #3b82f6;
+      --primary-glow: rgba(59, 130, 246, 0.35);
+      --bg: #090e1a;
+      --surface: rgba(17, 27, 49, 0.75);
+      --surface-elevated: #16223f;
+      --border: rgba(56, 189, 248, 0.15);
+      --border-hover: rgba(56, 189, 248, 0.4);
       --text: #f8fafc;
       --text-muted: #94a3b8;
       --accent-green: #10b981;
       --accent-cyan: #38bdf8;
       --accent-orange: #f97316;
+      --accent-emerald: #34d399;
     }
 
     * {
@@ -45,177 +47,329 @@
     body {
       font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
       background-color: var(--bg);
+      background-image: 
+        radial-gradient(circle at 50% 0%, rgba(37, 99, 235, 0.18) 0%, transparent 60%),
+        radial-gradient(circle at 10% 30%, rgba(16, 185, 129, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 90% 40%, rgba(249, 115, 22, 0.08) 0%, transparent 40%);
       color: var(--text);
       min-height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 2rem 1rem 3rem;
+      padding: 2.5rem 1rem 4rem;
       line-height: 1.5;
     }
 
+    /* Ambient glow banner */
     .header {
       width: 100%;
-      max-width: 920px;
+      max-width: 960px;
       text-align: center;
-      margin-bottom: 2rem;
+      margin-bottom: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
-    .badge {
-      display: inline-block;
-      background: rgba(37, 99, 235, 0.15);
-      color: #60a5fa;
-      border: 1px solid rgba(59, 130, 246, 0.3);
+    .profile-photo {
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #38bdf8;
+      box-shadow: 0 0 25px rgba(56, 189, 248, 0.4);
+      margin-bottom: 1.25rem;
+      transition: transform 0.3s ease;
+    }
+
+    .profile-photo:hover {
+      transform: scale(1.05);
+    }
+
+    .status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(16, 185, 129, 0.12);
+      color: #34d399;
+      border: 1px solid rgba(16, 185, 129, 0.3);
       padding: 0.35rem 0.95rem;
       border-radius: 9999px;
-      font-size: 0.75rem;
-      font-weight: 700;
+      font-size: 0.8rem;
+      font-weight: 600;
       margin-bottom: 1rem;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
+      letter-spacing: 0.02em;
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      background-color: #10b981;
+      border-radius: 50%;
+      box-shadow: 0 0 10px #10b981;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(0.85); }
     }
 
     h1 {
-      font-size: 2.25rem;
+      font-size: 2.5rem;
       font-weight: 800;
       margin-bottom: 0.4rem;
-      letter-spacing: -0.02em;
+      letter-spacing: -0.03em;
+      background: linear-gradient(135deg, #ffffff 40%, #94a3b8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
     .subtitle {
       font-size: 1.05rem;
       color: var(--text-muted);
+      max-width: 680px;
       margin-bottom: 1.5rem;
+    }
+
+    /* Key Metrics Bar */
+    .metrics-bar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+    }
+
+    .metric-badge {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 0.4rem 0.85rem;
+      border-radius: 8px;
+      font-size: 0.82rem;
+      color: #cbd5e1;
+    }
+
+    .metric-badge strong {
+      color: #fff;
     }
 
     .actions-bar {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 0.75rem;
-      margin-bottom: 1.5rem;
+      gap: 0.85rem;
+      margin-bottom: 2rem;
     }
 
     .btn {
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
-      padding: 0.75rem 1.35rem;
-      border-radius: 10px;
+      padding: 0.8rem 1.4rem;
+      border-radius: 12px;
       font-weight: 600;
       font-size: 0.925rem;
       text-decoration: none;
-      transition: all 0.2s ease;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
       cursor: pointer;
     }
 
     .btn-primary {
       background: linear-gradient(135deg, #2563eb, #1d4ed8);
       color: #ffffff;
-      box-shadow: 0 4px 14px rgba(37, 99, 235, 0.4);
+      box-shadow: 0 4px 16px rgba(37, 99, 235, 0.45);
+      border: 1px solid rgba(255, 255, 255, 0.15);
     }
 
     .btn-primary:hover {
       background: linear-gradient(135deg, #3b82f6, #2563eb);
       transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(37, 99, 235, 0.6);
     }
 
     .btn-outline {
       background-color: var(--surface);
+      backdrop-filter: blur(8px);
       color: var(--text);
       border: 1px solid var(--border);
     }
 
     .btn-outline:hover {
       background-color: var(--surface-elevated);
-      border-color: var(--text-muted);
+      border-color: var(--border-hover);
       transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
     }
 
     /* Projects Grid Section */
     .projects-section {
       width: 100%;
-      max-width: 920px;
-      margin-bottom: 2.5rem;
+      max-width: 960px;
+      margin-bottom: 3rem;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.25rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      padding-bottom: 0.75rem;
     }
 
     .section-title {
       font-size: 1.15rem;
-      font-weight: 700;
-      margin-bottom: 1rem;
-      text-align: center;
+      font-weight: 800;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .section-subtitle {
+      font-size: 0.8rem;
       color: var(--text-muted);
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
     }
 
     .projects-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1rem;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 1.25rem;
     }
 
     .project-card {
       background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 1.25rem;
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 16px;
+      padding: 1.5rem;
       text-decoration: none;
       color: var(--text);
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      gap: 0.75rem;
-      transition: all 0.2s ease;
+      gap: 1rem;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: transparent;
+      transition: background 0.3s ease;
+    }
+
+    .project-card.card-orange:hover::before {
+      background: linear-gradient(90deg, #f97316, #fb923c);
+    }
+    .project-card.card-blue:hover::before {
+      background: linear-gradient(90deg, #38bdf8, #2563eb);
+    }
+    .project-card.card-green:hover::before {
+      background: linear-gradient(90deg, #10b981, #34d399);
     }
 
     .project-card:hover {
       background: var(--surface-elevated);
-      border-color: #38bdf8;
-      transform: translateY(-3px);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+      transform: translateY(-4px);
+      border-color: rgba(255, 255, 255, 0.18);
+      box-shadow: 0 16px 32px rgba(0, 0, 0, 0.5);
     }
 
     .project-header {
       display: flex;
-      align-items: center;
-      gap: 0.75rem;
+      align-items: flex-start;
+      gap: 0.85rem;
     }
 
-    .project-icon {
-      font-size: 1.75rem;
+    .project-icon-box {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      flex-shrink: 0;
     }
+
+    .project-card.card-orange .project-icon-box { background: rgba(249, 115, 22, 0.15); border: 1px solid rgba(249, 115, 22, 0.3); }
+    .project-card.card-blue .project-icon-box { background: rgba(56, 189, 248, 0.15); border: 1px solid rgba(56, 189, 248, 0.3); }
+    .project-card.card-green .project-icon-box { background: rgba(16, 185, 129, 0.15); border: 1px solid rgba(16, 185, 129, 0.3); }
 
     .project-card h3 {
-      font-size: 1.05rem;
+      font-size: 1.15rem;
       font-weight: 700;
       color: #fff;
+      margin-bottom: 0.2rem;
+    }
+
+    .project-tagline {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
     }
 
     .project-card p {
-      font-size: 0.8125rem;
+      font-size: 0.85rem;
       color: var(--text-muted);
-      line-height: 1.4;
+      line-height: 1.45;
     }
 
-    .project-cta {
-      font-size: 0.8125rem;
-      font-weight: 700;
-      color: var(--accent-cyan);
-      display: inline-flex;
-      align-items: center;
+    .project-features {
+      display: flex;
+      flex-wrap: wrap;
       gap: 0.35rem;
     }
 
-    /* CV Preview Container */
+    .feature-pill {
+      font-size: 0.72rem;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      padding: 0.2rem 0.5rem;
+      border-radius: 6px;
+      color: #cbd5e1;
+    }
+
+    .project-cta {
+      font-size: 0.85rem;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      margin-top: 0.25rem;
+      transition: gap 0.2s ease;
+    }
+
+    .project-card:hover .project-cta {
+      gap: 0.65rem;
+    }
+
+    .project-card.card-orange .project-cta { color: #fb923c; }
+    .project-card.card-blue .project-cta { color: #38bdf8; }
+    .project-card.card-green .project-cta { color: #34d399; }
+
+    /* CV Preview Container with Mac-Style Window Dots */
     .viewer-container {
       width: 100%;
-      max-width: 920px;
+      max-width: 960px;
       background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 1.25rem;
-      box-shadow: 0 25px 35px -5px rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 18px;
+      padding: 1.5rem;
+      box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.7);
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -226,22 +380,37 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin-bottom: 1rem;
-      padding-bottom: 0.75rem;
-      border-bottom: 1px solid var(--border);
+      margin-bottom: 1.25rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
       font-size: 0.875rem;
       color: var(--text-muted);
     }
 
+    .window-controls {
+      display: flex;
+      gap: 6px;
+    }
+
+    .window-dot {
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+    }
+
+    .dot-red { background: #ef4444; }
+    .dot-yellow { background: #f59e0b; }
+    .dot-green { background: #10b981; }
+
     .viewer-container img {
       width: 100%;
       height: auto;
-      border-radius: 8px;
-      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+      border-radius: 10px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
     }
 
     .footer {
-      margin-top: 3rem;
+      margin-top: 3.5rem;
       text-align: center;
       color: var(--text-muted);
       font-size: 0.85rem;
@@ -259,17 +428,32 @@
 </head>
 <body>
 
+  <!-- Header & Profile -->
   <header class="header">
-    <div class="badge">Curriculum Vitae & Portfolio Ufficiale</div>
-    <h1>Valentyn Haidukov</h1>
-    <p class="subtitle">Web Developer & Supporto Digitale &bull; Gestione Dati & Catalogazione &bull; Categorie Protette (L. 68/99)</p>
+    <img src="https://github.com/HV94.png" alt="Valentyn Haidukov" class="profile-photo">
     
+    <div class="status-pill">
+      <span class="status-dot"></span>
+      Disponibile per opportunità lavorative • Città Sant'Angelo (PE)
+    </div>
+
+    <h1>Valentyn Haidukov</h1>
+    <p class="subtitle">Perito Informatico • Junior Web Developer & Supporto Digitale • Gestione & Analisi Dati</p>
+    
+    <!-- Metrics Bar -->
+    <div class="metrics-bar">
+      <div class="metric-badge">🎓 Diploma <strong>76/100</strong></div>
+      <div class="metric-badge">♿ <strong>Categorie Protette</strong> (L. 68/99)</div>
+      <div class="metric-badge">🚀 <strong>3 Applicativi</strong> Web Live</div>
+      <div class="metric-badge">🌐 <strong>4 Lingue</strong> Conosciute</div>
+    </div>
+
     <div class="actions-bar">
       <a href="Curriculum_Valentyn_Haidukov.pdf" download class="btn btn-primary" title="Scarica il file PDF sul tuo computer">
         📥 Scarica PDF Ufficiale (A4)
       </a>
       <a href="Curriculum_Valentyn_Haidukov.pdf" target="_blank" class="btn btn-outline" title="Apri il file a schermo intero nel browser">
-        📄 Apri a Schermo Intero
+        📄 Apri PDF a Schermo Intero
       </a>
       <a href="https://www.linkedin.com/in/valentyn-haidukov" target="_blank" class="btn btn-outline">
         💼 Profilo LinkedIn
@@ -282,46 +466,67 @@
 
   <!-- Interactive Projects Section -->
   <section class="projects-section">
-    <div class="section-title">🚀 I Miei Progetti Dimostrativi Live</div>
+    <div class="section-header">
+      <div class="section-title">
+        <span>🚀</span> Software & Simulatori Gestionali Live
+      </div>
+      <div class="section-subtitle">Tutti i progetti sono interattivi e navigabili</div>
+    </div>
+
     <div class="projects-grid">
       
       <!-- RetailHub -->
-      <a href="https://hv94.github.io/retail-store-catalog/" target="_blank" class="project-card">
+      <a href="https://hv94.github.io/retail-store-catalog/" target="_blank" class="project-card card-orange">
         <div class="project-header">
-          <span class="project-icon">👟</span>
+          <div class="project-icon-box">🛒</div>
           <div>
-            <h3>RetailHub - Megastore</h3>
-            <span style="font-size: 0.75rem; color: #f97316;">Calzature, Moda, Igiene & Casa</span>
+            <h3>RetailHub</h3>
+            <span class="project-tagline" style="color: #fb923c;">Megastore Multi-Reparto</span>
           </div>
         </div>
-        <p>Gestionale multi-reparto (32 referenze) con filtro taglie scarpe, corsie e simulatore cassa touch POS con scontrino.</p>
-        <span class="project-cta">Esplora Progetto &rarr;</span>
+        <p>Gestionale multi-reparto (Calzature con filtro taglie 38-45, Moda, Igiene e Cura Casa). Include carrello cassa touch POS, calcolo sconto Carta Fedeltà (-10%) e stampa scontrino fiscale.</p>
+        <div class="project-features">
+          <span class="feature-pill">Cassa Touch POS</span>
+          <span class="feature-pill">Filtro Taglie</span>
+          <span class="feature-pill">Barcode EAN</span>
+        </div>
+        <span class="project-cta">Apri Simulatore Cassa &rarr;</span>
       </a>
 
       <!-- TechStore -->
-      <a href="https://hv94.github.io/tech-store-catalog/" target="_blank" class="project-card">
+      <a href="https://hv94.github.io/tech-store-catalog/" target="_blank" class="project-card card-blue">
         <div class="project-header">
-          <span class="project-icon">💻</span>
+          <div class="project-icon-box">💻</div>
           <div>
-            <h3>TechStore - Elettronica</h3>
-            <span style="font-size: 0.75rem; color: #38bdf8;">Hardware, IT & Retail</span>
+            <h3>TechStore</h3>
+            <span class="project-tagline" style="color: #38bdf8;">Catalogo Elettronica & IT</span>
           </div>
         </div>
-        <p>Catalogo per notebook, smartphone e audio con specifiche hardware, argomentazioni di vendita e calcolo preventivi.</p>
-        <span class="project-cta">Esplora Progetto &rarr;</span>
+        <p>Catalogo per notebook, smartphone, tablet e audio. Schede tecniche hardware dettagliate, argomentazioni di vendita al cliente e generatore preventivi cassa.</p>
+        <div class="project-features">
+          <span class="feature-pill">Specifiche Hardware</span>
+          <span class="feature-pill">Preventivi</span>
+          <span class="feature-pill">Assistenza Clienti</span>
+        </div>
+        <span class="project-cta">Esplora Catalogo Tech &rarr;</span>
       </a>
 
       <!-- BiblioTech -->
-      <a href="https://hv94.github.io/bookstore-catalog-manager/" target="_blank" class="project-card">
+      <a href="https://hv94.github.io/bookstore-catalog-manager/" target="_blank" class="project-card card-green">
         <div class="project-header">
-          <span class="project-icon">📚</span>
+          <div class="project-icon-box">📚</div>
           <div>
-            <h3>BiblioTech - Libreria</h3>
-            <span style="font-size: 0.75rem; color: #34d399;">Catalogazione Libri & Scorte</span>
+            <h3>BiblioTech</h3>
+            <span class="project-tagline" style="color: #34d399;">Libreria & Inventario Merci</span>
           </div>
         </div>
-        <p>Applicazione per la gestione dell'inventario di una libreria, ricerca rapida per codice ISBN, generi e regolazione copie.</p>
-        <span class="project-cta">Esplora Progetto &rarr;</span>
+        <p>Gestionale magazzino libri con calcolo in tempo reale del valore inventario (€ 931,10), carico/scarico scorte con tasti rapidi, ricerca codice ISBN ed export report.</p>
+        <div class="project-features">
+          <span class="feature-pill">Valore Inventario</span>
+          <span class="feature-pill">Scorte Basse</span>
+          <span class="feature-pill">Codici ISBN-13</span>
+        </div>
+        <span class="project-cta">Gestisci Inventario &rarr;</span>
       </a>
 
     </div>
@@ -330,14 +535,19 @@
   <!-- CV Preview Viewer -->
   <main class="viewer-container">
     <div class="viewer-header">
-      <span>Anteprima del Curriculum Vitae (Formato A4 Ufficiale)</span>
+      <div class="window-controls">
+        <span class="window-dot dot-red"></span>
+        <span class="window-dot dot-yellow"></span>
+        <span class="window-dot dot-green"></span>
+      </div>
+      <span>Curriculum Vitae Ufficiale (Formato A4 con QR Code)</span>
       <a href="Curriculum_Valentyn_Haidukov.pdf" download style="color: #60a5fa; font-weight: 600; text-decoration: none;">Scarica PDF &darr;</a>
     </div>
     <img src="anteprima.png" alt="Curriculum Vitae - Valentyn Haidukov">
   </main>
 
   <footer class="footer">
-    <p>&copy; 2026 Valentyn Haidukov &bull; Città Sant'Angelo (PE) &bull; <a href="mailto:haidukov32@gmail.com">haidukov32@gmail.com</a></p>
+    <p>&copy; 2026 Valentyn Haidukov &bull; Città Sant'Angelo (PE) &bull; <a href="mailto:haidukov32@gmail.com">haidukov32@gmail.com</a> &bull; Tel: +39 393 489 8632</p>
   </footer>
 
 </body>
