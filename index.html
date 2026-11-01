@@ -214,11 +214,23 @@
 
     .section-header {
       display: flex;
-      align-items: center;
+      align-items: baseline;
       justify-content: space-between;
+      gap: 0.5rem 1rem;
       margin-bottom: 1.25rem;
       border-bottom: 1px solid rgba(255, 255, 255, 0.08);
       padding-bottom: 0.75rem;
+    }
+
+    @media (max-width: 640px) {
+      .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.35rem;
+      }
+      .section-subtitle {
+        font-size: 0.82rem;
+      }
     }
 
     .section-title {
