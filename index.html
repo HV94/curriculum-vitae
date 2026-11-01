@@ -278,6 +278,9 @@
     .project-card.card-green:hover::before {
       background: linear-gradient(90deg, #10b981, #34d399);
     }
+    .project-card.card-purple:hover::before {
+      background: linear-gradient(90deg, #8b5cf6, #00f0ff);
+    }
 
     .project-card:hover {
       background: var(--surface-elevated);
@@ -306,6 +309,7 @@
     .project-card.card-orange .project-icon-box { background: rgba(249, 115, 22, 0.15); border: 1px solid rgba(249, 115, 22, 0.3); }
     .project-card.card-blue .project-icon-box { background: rgba(56, 189, 248, 0.15); border: 1px solid rgba(56, 189, 248, 0.3); }
     .project-card.card-green .project-icon-box { background: rgba(16, 185, 129, 0.15); border: 1px solid rgba(16, 185, 129, 0.3); }
+    .project-card.card-purple .project-icon-box { background: rgba(139, 92, 246, 0.15); border: 1px solid rgba(139, 92, 246, 0.3); }
 
     .project-card h3 {
       font-size: 1.15rem;
@@ -359,6 +363,7 @@
     .project-card.card-orange .project-cta { color: #fb923c; }
     .project-card.card-blue .project-cta { color: #38bdf8; }
     .project-card.card-green .project-cta { color: #34d399; }
+    .project-card.card-purple .project-cta { color: #a78bfa; }
 
     /* CV Preview Container with Mac-Style Window Dots */
     .viewer-container {
@@ -468,7 +473,7 @@
   <section class="projects-section">
     <div class="section-header">
       <div class="section-title">
-        <span>🚀</span> Software & Simulatori Gestionali Live
+        <span>🚀</span> Software & Progetti Interattivi Live
       </div>
       <div class="section-subtitle">Tutti i progetti sono interattivi e navigabili</div>
     </div>
@@ -527,6 +532,24 @@
           <span class="feature-pill">Codici ISBN-13</span>
         </div>
         <span class="project-cta">Gestisci Inventario &rarr;</span>
+      </a>
+
+      <!-- Cyber Runner 2099 -->
+      <a href="https://hv94.github.io/cyber-runner/" target="_blank" class="project-card card-purple">
+        <div class="project-header">
+          <div class="project-icon-box">⚡</div>
+          <div>
+            <h3>Cyber Runner 2099</h3>
+            <span class="project-tagline" style="color: #a78bfa;">2D Vector Arcade Game</span>
+          </div>
+        </div>
+        <p>Videogioco arcade moderno sviluppato in Vanilla JavaScript. Motore vettoriale a 60 FPS su HTML5 Canvas, cinematica articolata del runner, sintesi sonora in tempo reale con Web Audio API e controlli touch mobile.</p>
+        <div class="project-features">
+          <span class="feature-pill">HTML5 Canvas 60 FPS</span>
+          <span class="feature-pill">Web Audio API</span>
+          <span class="feature-pill">Touch & Swipe</span>
+        </div>
+        <span class="project-cta">Gioca nel Browser &rarr;</span>
       </a>
 
     </div>
