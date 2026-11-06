@@ -240,14 +240,14 @@
 
     /* Key Metrics Bar */
 
-        .metrics-bar {
+            .metrics-bar {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       align-items: center;
       gap: 0.65rem;
       margin-bottom: 2rem;
-      max-width: 800px;
+      max-width: 850px;
       margin-left: auto;
       margin-right: auto;
     }
@@ -262,25 +262,13 @@
       border-radius: 8px;
       font-size: 0.82rem;
       color: #cbd5e1;
-    }
-
-    .cisco-badges-group {
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.45rem;
-      margin: 0.15rem 0;
+      text-align: center;
     }
 
     @media (max-width: 640px) {
       .metrics-bar {
         flex-direction: column;
         align-items: center;
-        gap: 0.5rem;
-      }
-      .cisco-badges-group {
-        margin: 0;
         gap: 0.5rem;
       }
     }
@@ -801,14 +789,16 @@
 
     
 
-        <!-- Metrics Bar -->
+                    <!-- Metrics Bar -->
     <div class="metrics-bar">
       <div class="metric-badge">🎓 Diploma <strong>76/100</strong></div>
       <div class="metric-badge">♿ <strong>Categorie Protette</strong> (L. 68/99)</div>
       
-      <div class="cisco-badges-group">
-        <div class="metric-badge" style="border-color: rgba(56, 189, 248, 0.5); background: rgba(56, 189, 248, 0.12); color: #38bdf8;">🛠️ <strong>Cisco Certified</strong> (Hardware Basics)</div>
-        <div class="metric-badge" style="border-color: rgba(16, 185, 129, 0.5); background: rgba(16, 185, 129, 0.14); color: #34d399;">🛡️ <strong>Cisco Certified</strong> (Cybersecurity)</div>
+      <div style="flex-basis: 100%; display: flex; justify-content: center; margin: 0.15rem 0;">
+        <div class="metric-badge" style="border-color: rgba(16, 185, 129, 0.45); background: rgba(16, 185, 129, 0.12); color: #34d399; flex-direction: column; gap: 0.2rem; padding: 0.45rem 1.1rem;">
+          <div>🎖️ <strong>2x Cisco Certified</strong></div>
+          <div style="font-size: 0.76rem; opacity: 0.92;">(Hardware & Cybersecurity)</div>
+        </div>
       </div>
 
       <div class="metric-badge">🚀 <strong>4 Progetti</strong> Web Live</div>
