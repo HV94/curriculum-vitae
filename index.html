@@ -1,621 +1,652 @@
-<!DOCTYPE html>
-<html lang="it">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <title>Curriculum Vitae & Portfolio - Valentyn Haidukov</title>
-  <meta name="description" content="Portfolio e Curriculum Vitae ufficiale di Valentyn Haidukov (Perito Informatico, Junior Web Developer, Gestione Dati, Categorie Protette L. 68/99).">
-
-  <!-- Open Graph / LinkedIn / WhatsApp -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://hv94.github.io/curriculum-vitae/">
-  <meta property="og:title" content="Curriculum Vitae & Portfolio - Valentyn Haidukov">
-  <meta property="og:description" content="Visualizza il CV ufficiale in alta risoluzione (PDF vettoriale) e naviga i 4 progetti interattivi (gestionali retail e arcade 2D). Categorie Protette L. 68/99.">
-  <meta property="og:image" content="https://hv94.github.io/curriculum-vitae/anteprima.png">
-  <meta property="og:image:width" content="1000">
-  <meta property="og:image:height" content="1400">
-  <meta property="og:image:type" content="image/png">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
-
-  <style>
-    :root {
-      --primary: #3b82f6;
-      --primary-glow: rgba(59, 130, 246, 0.35);
-      --bg: #090e1a;
-      --surface: rgba(17, 27, 49, 0.75);
-      --surface-elevated: #16223f;
-      --border: rgba(56, 189, 248, 0.15);
-      --border-hover: rgba(56, 189, 248, 0.4);
-      --text: #f8fafc;
-      --text-muted: #94a3b8;
-      --accent-green: #10b981;
-      --accent-cyan: #38bdf8;
-      --accent-orange: #f97316;
-      --accent-emerald: #34d399;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
-      background-color: var(--bg);
-      background-image: 
-        radial-gradient(circle at 50% 0%, rgba(37, 99, 235, 0.18) 0%, transparent 60%),
-        radial-gradient(circle at 10% 30%, rgba(16, 185, 129, 0.08) 0%, transparent 40%),
-        radial-gradient(circle at 90% 40%, rgba(249, 115, 22, 0.08) 0%, transparent 40%);
-      color: var(--text);
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 2.5rem 1rem 4rem;
-      line-height: 1.5;
-    }
-
-    /* Ambient glow banner */
-    .header {
-      width: 100%;
-      max-width: 960px;
-      text-align: center;
-      margin-bottom: 2.5rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .profile-photo {
-      width: 96px;
-      height: 96px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 3px solid #38bdf8;
-      box-shadow: 0 0 25px rgba(56, 189, 248, 0.4);
-      margin-bottom: 1.25rem;
-      transition: transform 0.3s ease;
-    }
-
-    .profile-photo:hover {
-      transform: scale(1.05);
-    }
-
-    .status-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      background: rgba(16, 185, 129, 0.12);
-      color: #34d399;
-      border: 1px solid rgba(16, 185, 129, 0.3);
-      padding: 0.35rem 0.95rem;
-      border-radius: 9999px;
-      font-size: 0.8rem;
-      font-weight: 600;
-      margin-bottom: 1rem;
-      letter-spacing: 0.02em;
-    }
-
-    .status-dot {
-      width: 8px;
-      height: 8px;
-      background-color: #10b981;
-      border-radius: 50%;
-      box-shadow: 0 0 10px #10b981;
-      animation: pulse 2s infinite;
-    }
-
-    @keyframes pulse {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.5; transform: scale(0.85); }
-    }
-
-    h1 {
-      font-size: 2.5rem;
-      font-weight: 800;
-      margin-bottom: 0.4rem;
-      letter-spacing: -0.03em;
-      background: linear-gradient(135deg, #ffffff 40%, #94a3b8 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .subtitle {
-      font-size: 1.05rem;
-      color: var(--text-muted);
-      max-width: 680px;
-      margin-bottom: 1.5rem;
-    }
-
-    /* Key Metrics Bar */
-    .metrics-bar {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 0.75rem;
-      margin-bottom: 2rem;
-    }
-
-    .metric-badge {
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      padding: 0.4rem 0.85rem;
-      border-radius: 8px;
-      font-size: 0.82rem;
-      color: #cbd5e1;
-    }
-
-    .metric-badge strong {
-      color: #fff;
-    }
-
-    .actions-bar {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 0.85rem;
-      margin-bottom: 2rem;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.8rem 1.4rem;
-      border-radius: 12px;
-      font-weight: 600;
-      font-size: 0.925rem;
-      text-decoration: none;
-      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-      cursor: pointer;
-    }
-
-    .btn-primary {
-      background: linear-gradient(135deg, #2563eb, #1d4ed8);
-      color: #ffffff;
-      box-shadow: 0 4px 16px rgba(37, 99, 235, 0.45);
-      border: 1px solid rgba(255, 255, 255, 0.15);
-    }
-
-    .btn-primary:hover {
-      background: linear-gradient(135deg, #3b82f6, #2563eb);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(37, 99, 235, 0.6);
-    }
-
-    .btn-outline {
-      background-color: var(--surface);
-      backdrop-filter: blur(8px);
-      color: var(--text);
-      border: 1px solid var(--border);
-    }
-
-    .btn-outline:hover {
-      background-color: var(--surface-elevated);
-      border-color: var(--border-hover);
-      transform: translateY(-2px);
-      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
-    }
-
-    /* Projects Grid Section */
-    .projects-section {
-      width: 100%;
-      max-width: 960px;
-      margin-bottom: 3rem;
-    }
-
-    .section-header {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      gap: 0.35rem;
-      margin-bottom: 1.5rem;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-      padding-bottom: 0.85rem;
-    }
-
-    .section-title {
-      font-size: 1.2rem;
-      font-weight: 800;
-      color: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
-    }
-
-    .section-subtitle {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-    }
-
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
-      gap: 1.25rem;
-    }
-
-    .project-card {
-      background: var(--surface);
-      backdrop-filter: blur(12px);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 16px;
-      padding: 1.5rem;
-      text-decoration: none;
-      color: var(--text);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      gap: 1rem;
-      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .project-card::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 3px;
-      background: transparent;
-      transition: background 0.3s ease;
-    }
-
-    .project-card.card-orange:hover::before {
-      background: linear-gradient(90deg, #f97316, #fb923c);
-    }
-    .project-card.card-blue:hover::before {
-      background: linear-gradient(90deg, #38bdf8, #2563eb);
-    }
-    .project-card.card-green:hover::before {
-      background: linear-gradient(90deg, #10b981, #34d399);
-    }
-    .project-card.card-purple:hover::before {
-      background: linear-gradient(90deg, #8b5cf6, #00f0ff);
-    }
-
-    .project-card:hover {
-      background: var(--surface-elevated);
-      transform: translateY(-4px);
-      border-color: rgba(255, 255, 255, 0.18);
-      box-shadow: 0 16px 32px rgba(0, 0, 0, 0.5);
-    }
-
-    .project-header {
-      display: flex;
-      align-items: flex-start;
-      gap: 0.85rem;
-    }
-
-    .project-icon-box {
-      width: 44px;
-      height: 44px;
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.5rem;
-      flex-shrink: 0;
-    }
-
-    .project-card.card-orange .project-icon-box { background: rgba(249, 115, 22, 0.15); border: 1px solid rgba(249, 115, 22, 0.3); }
-    .project-card.card-blue .project-icon-box { background: rgba(56, 189, 248, 0.15); border: 1px solid rgba(56, 189, 248, 0.3); }
-    .project-card.card-green .project-icon-box { background: rgba(16, 185, 129, 0.15); border: 1px solid rgba(16, 185, 129, 0.3); }
-    .project-card.card-purple .project-icon-box { background: rgba(139, 92, 246, 0.15); border: 1px solid rgba(139, 92, 246, 0.3); }
-
-    .project-card h3 {
-      font-size: 1.15rem;
-      font-weight: 700;
-      color: #fff;
-      margin-bottom: 0.2rem;
-    }
-
-    .project-tagline {
-      font-size: 0.75rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-
-    .project-card p {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-      line-height: 1.45;
-    }
-
-    .project-features {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.35rem;
-    }
-
-    .feature-pill {
-      font-size: 0.72rem;
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.07);
-      padding: 0.2rem 0.5rem;
-      border-radius: 6px;
-      color: #cbd5e1;
-    }
-
-    .project-cta {
-      font-size: 0.85rem;
-      font-weight: 700;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      margin-top: 0.25rem;
-      transition: gap 0.2s ease;
-    }
-
-    .project-card:hover .project-cta {
-      gap: 0.65rem;
-    }
-
-    .project-card.card-orange .project-cta { color: #fb923c; }
-    .project-card.card-blue .project-cta { color: #38bdf8; }
-    .project-card.card-green .project-cta { color: #34d399; }
-    .project-card.card-purple .project-cta { color: #a78bfa; }
-
-    /* CV Preview Container with Mac-Style Window Dots */
-    .viewer-container {
-      width: 100%;
-      max-width: 960px;
-      background: var(--surface);
-      backdrop-filter: blur(12px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 18px;
-      padding: 1.5rem;
-      box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.7);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .viewer-header {
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 1.25rem;
-      padding-bottom: 1rem;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-      font-size: 0.875rem;
-      color: var(--text-muted);
-    }
-
-    .window-controls {
-      display: flex;
-      gap: 6px;
-    }
-
-    .window-dot {
-      width: 11px;
-      height: 11px;
-      border-radius: 50%;
-    }
-
-    .dot-red { background: #ef4444; }
-    .dot-yellow { background: #f59e0b; }
-    .dot-green { background: #10b981; }
-
-    .viewer-container img {
-      width: 100%;
-      height: auto;
-      border-radius: 10px;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
-    }
-
-    .footer {
-      margin-top: 3.5rem;
-      text-align: center;
-      color: var(--text-muted);
-      font-size: 0.85rem;
-    }
-
-    .footer a {
-      color: #60a5fa;
-      text-decoration: none;
-    }
-
-    .footer a:hover {
-      text-decoration: underline;
-    }
-  </style>
-</head>
-<body>
-
-  <!-- Header & Profile -->
-  <header class="header">
-    <img src="https://github.com/HV94.png" alt="Valentyn Haidukov" class="profile-photo">
-    
-    <div class="status-pill">
-      <span class="status-dot"></span>
-      Disponibile per opportunità lavorative • Città Sant'Angelo (PE)
-    </div>
-
-    <h1>Valentyn Haidukov</h1>
-    <p class="subtitle">Perito Informatico • Hardware & Supporto IT • Junior Web Developer & Dati</p>
-    
-    <!-- Metrics Bar -->
-    <div class="metrics-bar">
-      <div class="metric-badge">🎓 Diploma <strong>76/100</strong></div>
-      <div class="metric-badge">♿ <strong>Categorie Protette</strong> (L. 68/99)</div>
-      <div class="metric-badge" style="border-color: rgba(56, 189, 248, 0.4); background: rgba(56, 189, 248, 0.1);">🏅 <strong>Cisco Certified</strong> (Hardware Basics)</div>
-      <div class="metric-badge">🚀 <strong>4 Progetti</strong> Web Live</div>
-      <div class="metric-badge">🌐 <strong>4 Lingue</strong> Conosciute</div>
-    </div>
-
-    <div class="actions-bar">
-      <a href="Curriculum_Valentyn_Haidukov.pdf" download class="btn btn-primary" title="Scarica il file PDF sul tuo computer">
-        📥 Scarica PDF Ufficiale (A4)
-      </a>
-      <a href="https://www.credly.com/badges/2f4ca071-b264-4690-8366-b49797df84b1/public_url" target="_blank" class="btn btn-outline" style="border-color: rgba(56, 189, 248, 0.5); color: #38bdf8;" title="Verifica il badge digitale ufficiale su Credly">
-        🏅 Verifica Badge Cisco Credly
-      </a>
-      <a href="Curriculum_Valentyn_Haidukov.pdf" target="_blank" class="btn btn-outline" title="Apri il file a schermo intero nel browser">
-        📄 Apri PDF a Schermo Intero
-      </a>
-      <a href="https://www.linkedin.com/in/valentyn-haidukov" target="_blank" class="btn btn-outline">
-        💼 Profilo LinkedIn
-      </a>
-      <a href="https://github.com/HV94" target="_blank" class="btn btn-outline">
-        🐙 GitHub (@HV94)
-      </a>
-    </div>
-  </header>
-
-  <!-- Certificazioni Ufficiali Section -->
-  <section class="projects-section" style="margin-bottom: 2.5rem;">
-    <div class="section-header">
-      <div class="section-title">
-        <span>🏅</span> Certificazioni Ufficiali & Riconoscimenti
-      </div>
-      <div class="section-subtitle">Credenziali professionali con badge digitale verificabile</div>
-    </div>
-
-    <div style="background: var(--surface); backdrop-filter: blur(12px); border: 1px solid rgba(56, 189, 248, 0.25); border-radius: 16px; padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem; position: relative; overflow: hidden;">
-      <div style="position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #38bdf8, #2563eb);"></div>
-      <div style="display: flex; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
-        <div style="display: flex; align-items: center; gap: 1rem;">
-          <div style="width: 52px; height: 52px; border-radius: 12px; background: rgba(56, 189, 248, 0.15); border: 1px solid rgba(56, 189, 248, 0.3); display: flex; align-items: center; justify-content: center; font-size: 1.8rem; flex-shrink: 0;">🛠️</div>
-          <div>
-            <h3 style="font-size: 1.25rem; font-weight: 700; color: #fff;">Computer Hardware Basics</h3>
-            <div style="font-size: 0.85rem; color: #38bdf8; font-weight: 600;">Cisco Networking Academy • Rilasciata a Novembre 2026</div>
-          </div>
-        </div>
-        <a href="https://www.credly.com/badges/2f4ca071-b264-4690-8366-b49797df84b1/public_url" target="_blank" class="btn btn-outline" style="border-color: #38bdf8; color: #38bdf8; font-size: 0.85rem; padding: 0.5rem 1rem;">
-          Verifica su Credly &rarr;
-        </a>
-      </div>
-      <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.5;">
-        Certificazione ufficiale attestante le competenze avanzate di architettura e componentistica PC (schede madri, CPU, RAM, storage SATA/NVMe, alimentatori), diagnostica e assemblaggio hardware per desktop, laptop e dispositivi mobili, manutenzione preventiva e protocolli di sicurezza elettrostatica (ESD).
-      </p>
-      <div style="display: flex; flex-wrap: wrap; gap: 0.4rem;">
-        <span class="feature-pill">Cert ID: 4e6cf59b-d520-4c93-8412-f198233008c1</span>
-        <span class="feature-pill">Personal Computers</span>
-        <span class="feature-pill">Laptops & Mobile Devices</span>
-        <span class="feature-pill">Hardware Maintenance</span>
-        <span class="feature-pill">Troubleshooting & ESD</span>
-        <span class="feature-pill" style="color: #34d399; border-color: rgba(16, 185, 129, 0.3);">Badge Verificato Credly</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- Interactive Projects Section -->
-  <section class="projects-section">
-    <div class="section-header">
-      <div class="section-title">
-        <span>🚀</span> Software & Progetti Interattivi Live
-      </div>
-      <div class="section-subtitle">Tutti i progetti sono interattivi e navigabili</div>
-    </div>
-
-    <div class="projects-grid">
-      
-      <!-- RetailHub -->
-      <a href="https://hv94.github.io/retail-store-catalog/" target="_blank" class="project-card card-orange">
-        <div class="project-header">
-          <div class="project-icon-box">🛒</div>
-          <div>
-            <h3>RetailHub</h3>
-            <span class="project-tagline" style="color: #fb923c;">Megastore Multi-Reparto</span>
-          </div>
-        </div>
-        <p>Gestionale multi-reparto (Calzature con filtro taglie 38-45, Moda, Igiene e Cura Casa). Include carrello cassa touch POS, calcolo sconto Carta Fedeltà (-10%) e stampa scontrino fiscale.</p>
-        <div class="project-features">
-          <span class="feature-pill">Cassa Touch POS</span>
-          <span class="feature-pill">Filtro Taglie</span>
-          <span class="feature-pill">Barcode EAN</span>
-        </div>
-        <span class="project-cta">Apri Simulatore Cassa &rarr;</span>
-      </a>
-
-      <!-- TechStore -->
-      <a href="https://hv94.github.io/tech-store-catalog/" target="_blank" class="project-card card-blue">
-        <div class="project-header">
-          <div class="project-icon-box">💻</div>
-          <div>
-            <h3>TechStore</h3>
-            <span class="project-tagline" style="color: #38bdf8;">Catalogo Elettronica & IT</span>
-          </div>
-        </div>
-        <p>Catalogo per notebook, smartphone, tablet e audio. Schede tecniche hardware dettagliate, argomentazioni di vendita al cliente e generatore preventivi cassa.</p>
-        <div class="project-features">
-          <span class="feature-pill">Specifiche Hardware</span>
-          <span class="feature-pill">Preventivi</span>
-          <span class="feature-pill">Assistenza Clienti</span>
-        </div>
-        <span class="project-cta">Esplora Catalogo Tech &rarr;</span>
-      </a>
-
-      <!-- BiblioTech -->
-      <a href="https://hv94.github.io/bookstore-catalog-manager/" target="_blank" class="project-card card-green">
-        <div class="project-header">
-          <div class="project-icon-box">📚</div>
-          <div>
-            <h3>BiblioTech</h3>
-            <span class="project-tagline" style="color: #34d399;">Libreria & Inventario Merci</span>
-          </div>
-        </div>
-        <p>Gestionale magazzino libri con calcolo in tempo reale del valore inventario (€ 931,10), carico/scarico scorte con tasti rapidi, ricerca codice ISBN ed export report.</p>
-        <div class="project-features">
-          <span class="feature-pill">Valore Inventario</span>
-          <span class="feature-pill">Scorte Basse</span>
-          <span class="feature-pill">Codici ISBN-13</span>
-        </div>
-        <span class="project-cta">Gestisci Inventario &rarr;</span>
-      </a>
-
-      <!-- Cyber Runner 2099 -->
-      <a href="https://hv94.github.io/cyber-runner/" target="_blank" class="project-card card-purple">
-        <div class="project-header">
-          <div class="project-icon-box">⚡</div>
-          <div>
-            <h3>Cyber Runner 2099</h3>
-            <span class="project-tagline" style="color: #a78bfa;">2D Vector Arcade Game</span>
-          </div>
-        </div>
-        <p>Videogioco arcade moderno sviluppato in Vanilla JavaScript. Motore vettoriale a 60 FPS con cinematica articolata del runner, effetti sonori dinamici e controlli touch mobile.</p>
-        <div class="project-features">
-          <span class="feature-pill">Vanilla JavaScript 60 FPS</span>
-          <span class="feature-pill">Effetti Audio Dinamici</span>
-          <span class="feature-pill">Touch & Swipe</span>
-        </div>
-        <span class="project-cta">Gioca nel Browser &rarr;</span>
-      </a>
-
-    </div>
-  </section>
-
-  <!-- CV Preview Viewer -->
-  <main class="viewer-container">
-    <div class="viewer-header">
-      <div class="window-controls">
-        <span class="window-dot dot-red"></span>
-        <span class="window-dot dot-yellow"></span>
-        <span class="window-dot dot-green"></span>
-      </div>
-      <span>Curriculum Vitae Ufficiale (Formato A4 con QR Code)</span>
-      <a href="Curriculum_Valentyn_Haidukov.pdf" download style="color: #60a5fa; font-weight: 600; text-decoration: none;">Scarica PDF &darr;</a>
-    </div>
-    <img src="anteprima.png" alt="Curriculum Vitae - Valentyn Haidukov">
-  </main>
-
-  <footer class="footer">
-    <p>&copy; 2026 Valentyn Haidukov &bull; Città Sant'Angelo (PE) &bull; <a href="mailto:haidukov32@gmail.com">haidukov32@gmail.com</a> &bull; Tel: +39 393 489 8632</p>
-  </footer>
-
-</body>
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Curriculum Vitae & Portfolio - Valentyn Haidukov</title>
+  <meta name="description" content="Portfolio e Curriculum Vitae ufficiale di Valentyn Haidukov (Perito Informatico, Junior Web Developer, Gestione Dati, Categorie Protette L. 68/99).">
+
+  <!-- Open Graph / LinkedIn / WhatsApp -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://hv94.github.io/curriculum-vitae/">
+  <meta property="og:title" content="Curriculum Vitae & Portfolio - Valentyn Haidukov">
+  <meta property="og:description" content="Visualizza il CV ufficiale in alta risoluzione (PDF vettoriale) e naviga i 4 progetti interattivi (gestionali retail e arcade 2D). Categorie Protette L. 68/99.">
+  <meta property="og:image" content="https://hv94.github.io/curriculum-vitae/anteprima.png">
+  <meta property="og:image:width" content="1000">
+  <meta property="og:image:height" content="1400">
+  <meta property="og:image:type" content="image/png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #3b82f6;
+      --primary-glow: rgba(59, 130, 246, 0.35);
+      --bg: #090e1a;
+      --surface: rgba(17, 27, 49, 0.75);
+      --surface-elevated: #16223f;
+      --border: rgba(56, 189, 248, 0.15);
+      --border-hover: rgba(56, 189, 248, 0.4);
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --accent-green: #10b981;
+      --accent-cyan: #38bdf8;
+      --accent-orange: #f97316;
+      --accent-emerald: #34d399;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      background-color: var(--bg);
+      background-image: 
+        radial-gradient(circle at 50% 0%, rgba(37, 99, 235, 0.18) 0%, transparent 60%),
+        radial-gradient(circle at 10% 30%, rgba(16, 185, 129, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 90% 40%, rgba(249, 115, 22, 0.08) 0%, transparent 40%);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2.5rem 1rem 4rem;
+      line-height: 1.5;
+    }
+
+    /* Ambient glow banner */
+    .header {
+      width: 100%;
+      max-width: 960px;
+      text-align: center;
+      margin-bottom: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .profile-photo {
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #38bdf8;
+      box-shadow: 0 0 25px rgba(56, 189, 248, 0.4);
+      margin-bottom: 1.25rem;
+      transition: transform 0.3s ease;
+    }
+
+    .profile-photo:hover {
+      transform: scale(1.05);
+    }
+
+    .status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(16, 185, 129, 0.12);
+      color: #34d399;
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      padding: 0.35rem 0.95rem;
+      border-radius: 9999px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      letter-spacing: 0.02em;
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      background-color: #10b981;
+      border-radius: 50%;
+      box-shadow: 0 0 10px #10b981;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(0.85); }
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 0.4rem;
+      letter-spacing: -0.03em;
+      background: linear-gradient(135deg, #ffffff 40%, #94a3b8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .subtitle {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      max-width: 680px;
+      margin-bottom: 1.5rem;
+    }
+
+    /* Key Metrics Bar */
+    .metrics-bar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+    }
+
+    .metric-badge {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 0.4rem 0.85rem;
+      border-radius: 8px;
+      font-size: 0.82rem;
+      color: #cbd5e1;
+    }
+
+    .metric-badge strong {
+      color: #fff;
+    }
+
+    .actions-bar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.85rem;
+      margin-bottom: 2rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.8rem 1.4rem;
+      border-radius: 12px;
+      font-weight: 600;
+      font-size: 0.925rem;
+      text-decoration: none;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #2563eb, #1d4ed8);
+      color: #ffffff;
+      box-shadow: 0 4px 16px rgba(37, 99, 235, 0.45);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .btn-primary:hover {
+      background: linear-gradient(135deg, #3b82f6, #2563eb);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(37, 99, 235, 0.6);
+    }
+
+    .btn-outline {
+      background-color: var(--surface);
+      backdrop-filter: blur(8px);
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+
+    .btn-outline:hover {
+      background-color: var(--surface-elevated);
+      border-color: var(--border-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Projects Grid Section */
+    .projects-section {
+      width: 100%;
+      max-width: 960px;
+      margin-bottom: 3rem;
+    }
+
+    .section-header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 0.35rem;
+      margin-bottom: 1.5rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      padding-bottom: 0.85rem;
+    }
+
+    .section-title {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+
+    .section-subtitle {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .project-card {
+      background: var(--surface);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 16px;
+      padding: 1.5rem;
+      text-decoration: none;
+      color: var(--text);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 1rem;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: transparent;
+      transition: background 0.3s ease;
+    }
+
+    .project-card.card-orange:hover::before {
+      background: linear-gradient(90deg, #f97316, #fb923c);
+    }
+    .project-card.card-blue:hover::before {
+      background: linear-gradient(90deg, #38bdf8, #2563eb);
+    }
+    .project-card.card-green:hover::before {
+      background: linear-gradient(90deg, #10b981, #34d399);
+    }
+    .project-card.card-purple:hover::before {
+      background: linear-gradient(90deg, #8b5cf6, #00f0ff);
+    }
+
+    .project-card:hover {
+      background: var(--surface-elevated);
+      transform: translateY(-4px);
+      border-color: rgba(255, 255, 255, 0.18);
+      box-shadow: 0 16px 32px rgba(0, 0, 0, 0.5);
+    }
+
+    .project-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.85rem;
+    }
+
+    .project-icon-box {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      flex-shrink: 0;
+    }
+
+    .project-card.card-orange .project-icon-box { background: rgba(249, 115, 22, 0.15); border: 1px solid rgba(249, 115, 22, 0.3); }
+    .project-card.card-blue .project-icon-box { background: rgba(56, 189, 248, 0.15); border: 1px solid rgba(56, 189, 248, 0.3); }
+    .project-card.card-green .project-icon-box { background: rgba(16, 185, 129, 0.15); border: 1px solid rgba(16, 185, 129, 0.3); }
+    .project-card.card-purple .project-icon-box { background: rgba(139, 92, 246, 0.15); border: 1px solid rgba(139, 92, 246, 0.3); }
+
+    .project-card h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 0.2rem;
+    }
+
+    .project-tagline {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .project-card p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.45;
+    }
+
+    .project-features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+    }
+
+    .feature-pill {
+      font-size: 0.72rem;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      padding: 0.2rem 0.5rem;
+      border-radius: 6px;
+      color: #cbd5e1;
+    }
+
+    .project-cta {
+      font-size: 0.85rem;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      margin-top: 0.25rem;
+      transition: gap 0.2s ease;
+    }
+
+    .project-card:hover .project-cta {
+      gap: 0.65rem;
+    }
+
+    .project-card.card-orange .project-cta { color: #fb923c; }
+    .project-card.card-blue .project-cta { color: #38bdf8; }
+    .project-card.card-green .project-cta { color: #34d399; }
+    .project-card.card-purple .project-cta { color: #a78bfa; }
+
+    /* CV Preview Container with Mac-Style Window Dots */
+    .viewer-container {
+      width: 100%;
+      max-width: 960px;
+      background: var(--surface);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 18px;
+      padding: 1.5rem;
+      box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.7);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .viewer-header {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.25rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      font-size: 0.875rem;
+      color: var(--text-muted);
+    }
+
+    .window-controls {
+      display: flex;
+      gap: 6px;
+    }
+
+    .window-dot {
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+    }
+
+    .dot-red { background: #ef4444; }
+    .dot-yellow { background: #f59e0b; }
+    .dot-green { background: #10b981; }
+
+    .viewer-container img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+    }
+
+    .footer {
+      margin-top: 3.5rem;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    .footer a {
+      color: #60a5fa;
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header & Profile -->
+  <header class="header">
+    <img src="https://github.com/HV94.png" alt="Valentyn Haidukov" class="profile-photo">
+    
+    <div class="status-pill">
+      <span class="status-dot"></span>
+      Disponibile per opportunità lavorative • Città Sant'Angelo (PE)
+    </div>
+
+    <h1>Valentyn Haidukov</h1>
+    <p class="subtitle">Perito Informatico • Hardware & Supporto IT • Junior Web Developer & Dati</p>
+    
+    <!-- Metrics Bar -->
+    <div class="metrics-bar">
+      <div class="metric-badge">🎓 Diploma <strong>76/100</strong></div>
+      <div class="metric-badge">♿ <strong>Categorie Protette</strong> (L. 68/99)</div>
+      <div class="metric-badge" style="border-color: rgba(56, 189, 248, 0.4); background: rgba(56, 189, 248, 0.1);">🏅 <strong>Cisco Certified</strong> (Hardware Basics)</div>
+      <div class="metric-badge">🚀 <strong>4 Progetti</strong> Web Live</div>
+      <div class="metric-badge">🌐 <strong>4 Lingue</strong> Conosciute</div>
+    </div>
+
+    <div class="actions-bar">
+      <a href="Curriculum_Valentyn_Haidukov.pdf" download class="btn btn-primary" title="Scarica il file PDF sul tuo computer">
+        📥 Scarica PDF Ufficiale (A4)
+      </a>
+      <a href="https://www.credly.com/badges/2f4ca071-b264-4690-8366-b49797df84b1/public_url" target="_blank" class="btn btn-outline" style="border-color: rgba(56, 189, 248, 0.5); color: #38bdf8;" title="Verifica il badge digitale ufficiale su Credly">
+        🏅 Verifica Badge Cisco Credly
+      </a>
+      <a href="Curriculum_Valentyn_Haidukov.pdf" target="_blank" class="btn btn-outline" title="Apri il file a schermo intero nel browser">
+        📄 Apri PDF a Schermo Intero
+      </a>
+      <a href="https://www.linkedin.com/in/valentyn-haidukov" target="_blank" class="btn btn-outline">
+        💼 Profilo LinkedIn
+      </a>
+      <a href="https://github.com/HV94" target="_blank" class="btn btn-outline">
+        🐙 GitHub (@HV94)
+      </a>
+    </div>
+  </header>
+
+  <!-- Certificazioni Ufficiali Section -->
+  <section class="projects-section" style="margin-bottom: 2.5rem;">
+    <div class="section-header">
+      <div class="section-title">
+        <span>🏅</span> Certificazioni Ufficiali & Riconoscimenti
+      </div>
+      <div class="section-subtitle">Credenziali professionali Cisco con badge digitale verificabile su Credly</div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+      <!-- Card 1: Cybersecurity -->
+      <div style="background: var(--surface); backdrop-filter: blur(12px); border: 1px solid rgba(16, 185, 129, 0.35); border-radius: 16px; padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem; position: relative; overflow: hidden;">
+        <div style="position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #10b981, #06b6d4);"></div>
+        <div style="display: flex; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+          <div style="display: flex; align-items: center; gap: 1rem;">
+            <div style="width: 52px; height: 52px; border-radius: 12px; background: rgba(16, 185, 129, 0.15); border: 1px solid rgba(16, 185, 129, 0.3); display: flex; align-items: center; justify-content: center; font-size: 1.8rem; flex-shrink: 0;">🛡️</div>
+            <div>
+              <h3 style="font-size: 1.25rem; font-weight: 700; color: #fff;">Introduction to Cybersecurity</h3>
+              <div style="font-size: 0.85rem; color: #34d399; font-weight: 600;">Cisco Networking Academy • Rilasciata a Novembre 2026</div>
+            </div>
+          </div>
+          <a href="https://www.credly.com/badges/1cf3052b-c5a6-443a-a1e8-267ac0b2ac05/public_url" target="_blank" class="btn btn-outline" style="border-color: #34d399; color: #34d399; font-size: 0.85rem; padding: 0.5rem 1rem;">
+            Verifica su Credly &rarr;
+          </a>
+        </div>
+        <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.5;">
+          Certificazione ufficiale Cisco attestante le competenze fondamentali di sicurezza difensiva: principi della CIA Triad (Riservatezza, Integrità, Disponibilità), identificazione e mitigazione delle minacce informatiche (malware, phishing, attacchi DoS/DDoS), protezione perimetrale tramite firewall, monitoraggio e conformità delle normative di sicurezza dei dati e privacy.
+        </p>
+        <div style="display: flex; flex-wrap: wrap; gap: 0.4rem;">
+          <span class="feature-pill">Cert ID: 5dbbd965-c8e5-4c51-be3a-d1eb2584d251</span>
+          <span class="feature-pill">Cyber Best Practices</span>
+          <span class="feature-pill">Threat Detection</span>
+          <span class="feature-pill">Network Vulnerabilities</span>
+          <span class="feature-pill">Data Confidentiality</span>
+          <span class="feature-pill" style="color: #34d399; border-color: rgba(16, 185, 129, 0.3);">Badge Verificato Credly</span>
+        </div>
+      </div>
+
+      <!-- Card 2: Computer Hardware Basics -->
+      <div style="background: var(--surface); backdrop-filter: blur(12px); border: 1px solid rgba(56, 189, 248, 0.25); border-radius: 16px; padding: 1.5rem; display: flex; flex-direction: column; gap: 1rem; position: relative; overflow: hidden;">
+        <div style="position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #38bdf8, #2563eb);"></div>
+        <div style="display: flex; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+          <div style="display: flex; align-items: center; gap: 1rem;">
+            <div style="width: 52px; height: 52px; border-radius: 12px; background: rgba(56, 189, 248, 0.15); border: 1px solid rgba(56, 189, 248, 0.3); display: flex; align-items: center; justify-content: center; font-size: 1.8rem; flex-shrink: 0;">🛠️</div>
+            <div>
+              <h3 style="font-size: 1.25rem; font-weight: 700; color: #fff;">Computer Hardware Basics</h3>
+              <div style="font-size: 0.85rem; color: #38bdf8; font-weight: 600;">Cisco Networking Academy • Rilasciata a Novembre 2026</div>
+            </div>
+          </div>
+          <a href="https://www.credly.com/badges/2f4ca071-b264-4690-8366-b49797df84b1/public_url" target="_blank" class="btn btn-outline" style="border-color: #38bdf8; color: #38bdf8; font-size: 0.85rem; padding: 0.5rem 1rem;">
+            Verifica su Credly &rarr;
+          </a>
+        </div>
+        <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.5;">
+          Certificazione ufficiale attestante le competenze avanzate di architettura e componentistica PC (schede madri, CPU, RAM, storage SATA/NVMe, alimentatori), diagnostica e assemblaggio hardware per desktop, laptop e dispositivi mobili, manutenzione preventiva e protocolli di sicurezza elettrostatica (ESD).
+        </p>
+        <div style="display: flex; flex-wrap: wrap; gap: 0.4rem;">
+          <span class="feature-pill">Cert ID: 4e6cf59b-d520-4c93-8412-f198233008c1</span>
+          <span class="feature-pill">Personal Computers</span>
+          <span class="feature-pill">Laptops & Mobile Devices</span>
+          <span class="feature-pill">Hardware Maintenance</span>
+          <span class="feature-pill">Troubleshooting & ESD</span>
+          <span class="feature-pill" style="color: #34d399; border-color: rgba(16, 185, 129, 0.3);">Badge Verificato Credly</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Projects Section -->
+  <section class="projects-section">
+    <div class="section-header">
+      <div class="section-title">
+        <span>🚀</span> Software & Progetti Interattivi Live
+      </div>
+      <div class="section-subtitle">Tutti i progetti sono interattivi e navigabili</div>
+    </div>
+
+    <div class="projects-grid">
+      
+      <!-- RetailHub -->
+      <a href="https://hv94.github.io/retail-store-catalog/" target="_blank" class="project-card card-orange">
+        <div class="project-header">
+          <div class="project-icon-box">🛒</div>
+          <div>
+            <h3>RetailHub</h3>
+            <span class="project-tagline" style="color: #fb923c;">Megastore Multi-Reparto</span>
+          </div>
+        </div>
+        <p>Gestionale multi-reparto (Calzature con filtro taglie 38-45, Moda, Igiene e Cura Casa). Include carrello cassa touch POS, calcolo sconto Carta Fedeltà (-10%) e stampa scontrino fiscale.</p>
+        <div class="project-features">
+          <span class="feature-pill">Cassa Touch POS</span>
+          <span class="feature-pill">Filtro Taglie</span>
+          <span class="feature-pill">Barcode EAN</span>
+        </div>
+        <span class="project-cta">Apri Simulatore Cassa &rarr;</span>
+      </a>
+
+      <!-- TechStore -->
+      <a href="https://hv94.github.io/tech-store-catalog/" target="_blank" class="project-card card-blue">
+        <div class="project-header">
+          <div class="project-icon-box">💻</div>
+          <div>
+            <h3>TechStore</h3>
+            <span class="project-tagline" style="color: #38bdf8;">Catalogo Elettronica & IT</span>
+          </div>
+        </div>
+        <p>Catalogo per notebook, smartphone, tablet e audio. Schede tecniche hardware dettagliate, argomentazioni di vendita al cliente e generatore preventivi cassa.</p>
+        <div class="project-features">
+          <span class="feature-pill">Specifiche Hardware</span>
+          <span class="feature-pill">Preventivi</span>
+          <span class="feature-pill">Assistenza Clienti</span>
+        </div>
+        <span class="project-cta">Esplora Catalogo Tech &rarr;</span>
+      </a>
+
+      <!-- BiblioTech -->
+      <a href="https://hv94.github.io/bookstore-catalog-manager/" target="_blank" class="project-card card-green">
+        <div class="project-header">
+          <div class="project-icon-box">📚</div>
+          <div>
+            <h3>BiblioTech</h3>
+            <span class="project-tagline" style="color: #34d399;">Libreria & Inventario Merci</span>
+          </div>
+        </div>
+        <p>Gestionale magazzino libri con calcolo in tempo reale del valore inventario (€ 931,10), carico/scarico scorte con tasti rapidi, ricerca codice ISBN ed export report.</p>
+        <div class="project-features">
+          <span class="feature-pill">Valore Inventario</span>
+          <span class="feature-pill">Scorte Basse</span>
+          <span class="feature-pill">Codici ISBN-13</span>
+        </div>
+        <span class="project-cta">Gestisci Inventario &rarr;</span>
+      </a>
+
+      <!-- Cyber Runner 2099 -->
+      <a href="https://hv94.github.io/cyber-runner/" target="_blank" class="project-card card-purple">
+        <div class="project-header">
+          <div class="project-icon-box">⚡</div>
+          <div>
+            <h3>Cyber Runner 2099</h3>
+            <span class="project-tagline" style="color: #a78bfa;">2D Vector Arcade Game</span>
+          </div>
+        </div>
+        <p>Videogioco arcade moderno sviluppato in Vanilla JavaScript. Motore vettoriale a 60 FPS con cinematica articolata del runner, effetti sonori dinamici e controlli touch mobile.</p>
+        <div class="project-features">
+          <span class="feature-pill">Vanilla JavaScript 60 FPS</span>
+          <span class="feature-pill">Effetti Audio Dinamici</span>
+          <span class="feature-pill">Touch & Swipe</span>
+        </div>
+        <span class="project-cta">Gioca nel Browser &rarr;</span>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- CV Preview Viewer -->
+  <main class="viewer-container">
+    <div class="viewer-header">
+      <div class="window-controls">
+        <span class="window-dot dot-red"></span>
+        <span class="window-dot dot-yellow"></span>
+        <span class="window-dot dot-green"></span>
+      </div>
+      <span>Curriculum Vitae Ufficiale (Formato A4 con QR Code)</span>
+      <a href="Curriculum_Valentyn_Haidukov.pdf" download style="color: #60a5fa; font-weight: 600; text-decoration: none;">Scarica PDF &darr;</a>
+    </div>
+    <img src="anteprima.png" alt="Curriculum Vitae - Valentyn Haidukov">
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2026 Valentyn Haidukov &bull; Città Sant'Angelo (PE) &bull; <a href="mailto:haidukov32@gmail.com">haidukov32@gmail.com</a> &bull; Tel: +39 393 489 8632</p>
+  </footer>
+
+</body>
 </html>
