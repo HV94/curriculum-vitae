@@ -240,40 +240,49 @@
 
     /* Key Metrics Bar */
 
-    .metrics-bar {
-
+        .metrics-bar {
       display: flex;
-
       flex-wrap: wrap;
-
       justify-content: center;
-
-      gap: 0.75rem;
-
+      align-items: center;
+      gap: 0.65rem;
       margin-bottom: 2rem;
-
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .metric-badge {
-
-      display: flex;
-
+      display: inline-flex;
       align-items: center;
-
       gap: 0.4rem;
-
       background: rgba(255, 255, 255, 0.04);
-
       border: 1px solid rgba(255, 255, 255, 0.08);
-
       padding: 0.4rem 0.85rem;
-
       border-radius: 8px;
-
       font-size: 0.82rem;
-
       color: #cbd5e1;
+    }
 
+    .cisco-badges-group {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.45rem;
+      margin: 0.15rem 0;
+    }
+
+    @media (max-width: 640px) {
+      .metrics-bar {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      .cisco-badges-group {
+        margin: 0;
+        gap: 0.5rem;
+      }
     }
 
     .metric-badge strong {
@@ -792,20 +801,18 @@
 
     
 
-    <!-- Metrics Bar -->
-
+        <!-- Metrics Bar -->
     <div class="metrics-bar">
-
       <div class="metric-badge">🎓 Diploma <strong>76/100</strong></div>
-
       <div class="metric-badge">♿ <strong>Categorie Protette</strong> (L. 68/99)</div>
-
-      <div class="metric-badge" style="border-color: rgba(16, 185, 129, 0.45); background: rgba(16, 185, 129, 0.12); color: #34d399;">🎖️ <strong>2x Cisco Certified</strong> (Hardware & Cybersecurity)</div>
+      
+      <div class="cisco-badges-group">
+        <div class="metric-badge" style="border-color: rgba(56, 189, 248, 0.5); background: rgba(56, 189, 248, 0.12); color: #38bdf8;">🛠️ <strong>Cisco Certified</strong> (Hardware Basics)</div>
+        <div class="metric-badge" style="border-color: rgba(16, 185, 129, 0.5); background: rgba(16, 185, 129, 0.14); color: #34d399;">🛡️ <strong>Cisco Certified</strong> (Cybersecurity)</div>
+      </div>
 
       <div class="metric-badge">🚀 <strong>4 Progetti</strong> Web Live</div>
-
       <div class="metric-badge">🌐 <strong>4 Lingue</strong> Conosciute</div>
-
     </div>
 
     <div class="actions-bar">
