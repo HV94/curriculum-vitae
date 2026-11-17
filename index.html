@@ -845,7 +845,7 @@
 
     <div class="actions-bar">
 
-      <a href="Certificato_Fortinet_Cybersecurity_Cloud.pdf" target="_blank" class="btn btn-outline" style="border-color: rgba(239, 68, 68, 0.5); color: #f87171;" title="Visualizza il certificato ufficiale Fortinet FCF 1.0">
+      <a href="Certificato_Fortinet_Cybersecurity_Cloud.pdf" target="_blank" class="btn btn-outline" style="border-color: rgba(239, 68, 68, 0.5); color: #f87171;" title="Visualizza il certificato ufficiale Fortinet FCF">
         <svg class="btn-svg" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> Certificato Fortinet FCF
       </a>
       <a href="https://learn.microsoft.com/api/achievements/share/it-it/valentyn-haidukov/ABAAXT57?sharingId=9A35F4275007E452" target="_blank" class="btn btn-outline" style="border-color: rgba(59, 130, 246, 0.5); color: #60a5fa;" title="Verifica il trofeo ufficiale Microsoft 365 MS-102">
@@ -863,7 +863,7 @@
 
       <div style="flex-basis: 100%; height: 0;"></div>
 
-      <a href="Curriculum_Valentyn_Haidukov.pdf" download="Curriculum_Valentyn_Haidukov.pdf" onclick="downloadOfficialPDF(event)" class="btn btn-primary" title="Scarica il file PDF sul tuo dispositivo">
+      <a id="btnDownloadTop" href="Curriculum_Valentyn_Haidukov.pdf" download="Curriculum_Valentyn_Haidukov.pdf" class="btn btn-primary" title="Scarica il file PDF sul tuo dispositivo">
         <svg class="btn-svg" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Scarica PDF Ufficiale (A4)
       </a>
       <a href="Curriculum_Valentyn_Haidukov.pdf" target="_blank" class="btn btn-outline" title="Apri il file a schermo intero nel browser">
@@ -1248,7 +1248,7 @@
 
       <span>Curriculum Vitae Ufficiale (Formato A4 con QR Code)</span>
 
-      <a href="Curriculum_Valentyn_Haidukov.pdf" download style="color: #60a5fa; font-weight: 600; text-decoration: none;">Scarica PDF &darr;</a>
+      <a id="btnDownloadBottom" href="Curriculum_Valentyn_Haidukov.pdf" download="Curriculum_Valentyn_Haidukov.pdf" style="color: #60a5fa; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;"><svg style="width: 14px; height: 14px; stroke: currentColor; stroke-width: 2; fill: none;" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Scarica PDF (A4)</a>
 
     </div>
 
@@ -1263,35 +1263,41 @@
   </footer>
 
   <script>
-    function downloadOfficialPDF(e) {
-      e.preventDefault();
-      const btn = e.currentTarget;
-      const originalText = btn.innerHTML;
-      btn.style.opacity = '0.7';
+    // Pre-caricamento del PDF come stream binario per forzare la richiesta nativa di download su iOS Safari e Android
+    var pdfBlobUrl = null;
 
+    function initDownloadButtons() {
       fetch('Curriculum_Valentyn_Haidukov.pdf')
-        .then(response => {
-          if (!response.ok) throw new Error('File download error');
-          return response.blob();
+        .then(function(res) {
+          if (!res.ok) throw new Error('Download preload error');
+          return res.blob();
         })
-        .then(blob => {
-          const blobUrl = window.URL.createObjectURL(blob);
-          const link = document.createElement('a');
-          link.href = blobUrl;
-          link.download = 'Curriculum_Valentyn_Haidukov.pdf';
-          document.body.appendChild(link);
-          link.click();
-          document.body.removeChild(link);
-          setTimeout(() => {
-            window.URL.revokeObjectURL(blobUrl);
-            btn.style.opacity = '1';
-          }, 1500);
+        .then(function(origBlob) {
+          // Assegna il tipo binario application/octet-stream per costringere il browser a mostrare "Scarica file" invece di aprirlo inline
+          var streamBlob = new Blob([origBlob], { type: 'application/octet-stream' });
+          pdfBlobUrl = window.URL.createObjectURL(streamBlob);
+
+          var bTop = document.getElementById('btnDownloadTop');
+          var bBottom = document.getElementById('btnDownloadBottom');
+
+          if (bTop) {
+            bTop.href = pdfBlobUrl;
+            bTop.setAttribute('download', 'Curriculum_Valentyn_Haidukov.pdf');
+          }
+          if (bBottom) {
+            bBottom.href = pdfBlobUrl;
+            bBottom.setAttribute('download', 'Curriculum_Valentyn_Haidukov.pdf');
+          }
         })
-        .catch(err => {
-          console.error(err);
-          btn.style.opacity = '1';
-          window.location.href = 'Curriculum_Valentyn_Haidukov.pdf';
+        .catch(function(err) {
+          console.log('Preload note:', err);
         });
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initDownloadButtons);
+    } else {
+      initDownloadButtons();
     }
   </script>
 </body>
