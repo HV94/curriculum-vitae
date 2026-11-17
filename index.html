@@ -282,6 +282,30 @@
       }
     }
 
+    .badge-svg {
+      width: 14px;
+      height: 14px;
+      stroke: currentColor;
+      stroke-width: 2.2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      fill: none;
+      flex-shrink: 0;
+      vertical-align: -2px;
+    }
+
+    .btn-svg {
+      width: 17px;
+      height: 17px;
+      stroke: currentColor;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      fill: none;
+      flex-shrink: 0;
+      vertical-align: -3px;
+    }
+
     .metric-badge strong {
 
       color: #fff;
@@ -800,21 +824,21 @@
 
                         <!-- Metrics Bar -->
     <div class="metrics-bar">
-      <div class="metric-badge">🎓 Diploma <strong>Tecnico IT</strong></div>
-      <div class="metric-badge">♿ <strong>Categorie Protette</strong> (L. 68/99)</div>
+      <div class="metric-badge"><svg class="badge-svg" viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg> Diploma <strong>Tecnico IT</strong></div>
+      <div class="metric-badge"><svg class="badge-svg" viewBox="0 0 24 24"><circle cx="16" cy="4" r="1.5"/><path d="M19 13v-3h-4l-1.5 5h3.5"/><path d="M14 17a5 5 0 1 1-5-5"/><path d="M9 12h5"/></svg> <strong>Categorie Protette</strong> (L. 68/99)</div>
       
-      <div class="metric-badge">🚀 <strong>4 Progetti</strong> Web Live</div>
-      <div class="metric-badge">🌐 <strong>4 Lingue</strong> Conosciute</div>
+      <div class="metric-badge"><svg class="badge-svg" viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg> <strong>4 Progetti</strong> Web Live</div>
+      <div class="metric-badge"><svg class="badge-svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10z"/></svg> <strong>4 Lingue</strong> Conosciute</div>
 
       <div class="certs-row" style="flex-basis: 100%; display: flex; justify-content: center; gap: 0.5rem; flex-wrap: wrap; margin: 0.3rem 0;">
         <div class="metric-badge" style="border-color: rgba(239, 68, 68, 0.45); background: rgba(239, 68, 68, 0.12); color: #f87171;">
-          🔒 <strong>Fortinet Certified</strong> FCF
+          <svg class="badge-svg" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> <strong>Fortinet Certified</strong> FCF
         </div>
         <div class="metric-badge" style="border-color: rgba(59, 130, 246, 0.45); background: rgba(59, 130, 246, 0.12); color: #60a5fa;">
-          ☁️ <strong>Microsoft Certified</strong> (M365 &amp; Win 11)
+          <svg class="badge-svg" viewBox="0 0 24 24"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg> <strong>Microsoft Certified</strong> (M365 &amp; Win 11)
         </div>
         <div class="metric-badge" style="border-color: rgba(16, 185, 129, 0.45); background: rgba(16, 185, 129, 0.12); color: #34d399;">
-          🛡️ <strong>3x Cisco Certified</strong>
+          <svg class="badge-svg" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> <strong>3x Cisco Certified</strong>
         </div>
       </div>
     </div>
@@ -822,35 +846,35 @@
     <div class="actions-bar">
 
       <a href="Certificato_Fortinet_Cybersecurity_Cloud.pdf" target="_blank" class="btn btn-outline" style="border-color: rgba(239, 68, 68, 0.5); color: #f87171;" title="Visualizza il certificato ufficiale Fortinet FCF 1.0">
-        🔒 Certificato Fortinet FCF
+        <svg class="btn-svg" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> Certificato Fortinet FCF
       </a>
       <a href="https://learn.microsoft.com/api/achievements/share/it-it/valentyn-haidukov/ABAAXT57?sharingId=9A35F4275007E452" target="_blank" class="btn btn-outline" style="border-color: rgba(59, 130, 246, 0.5); color: #60a5fa;" title="Verifica il trofeo ufficiale Microsoft 365 MS-102">
-        ☁️ Trofeo Microsoft 365 (MS-102)
+        <svg class="btn-svg" viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg> Trofeo Microsoft 365 (MS-102)
       </a>
       <a href="https://www.credly.com/badges/1cf3052b-c5a6-443a-a1e8-267ac0b2ac05/public_url" target="_blank" class="btn btn-outline" style="border-color: rgba(16, 185, 129, 0.5); color: #34d399;" title="Verifica il badge digitale ufficiale di Cybersecurity su Credly">
-        🛡️ Badge Cisco Cybersecurity
+        <svg class="btn-svg" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> Badge Cisco Cybersecurity
       </a>
       <a href="https://www.credly.com/badges/aa1b7f6d-3922-4c51-aa02-f963119235ee/public_url" target="_blank" class="btn btn-outline" style="border-color: rgba(129, 140, 248, 0.5); color: #818cf8;" title="Verifica il badge digitale ufficiale di Networking su Credly">
-        🌐 Badge Cisco Networking
+        <svg class="btn-svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10z"/></svg> Badge Cisco Networking
       </a>
       <a href="https://www.credly.com/badges/2f4ca071-b264-4690-8366-b49797df84b1/public_url" target="_blank" class="btn btn-outline" style="border-color: rgba(56, 189, 248, 0.5); color: #38bdf8;" title="Verifica il badge digitale ufficiale di Hardware su Credly">
-        🛠️ Badge Cisco Hardware
+        <svg class="btn-svg" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg> Badge Cisco Hardware
       </a>
 
       <div style="flex-basis: 100%; height: 0;"></div>
 
       <a href="Curriculum_Valentyn_Haidukov.pdf" download class="btn btn-primary" title="Scarica il file PDF sul tuo computer">
-        📥 Scarica PDF Ufficiale (A4)
+        <svg class="btn-svg" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Scarica PDF Ufficiale (A4)
       </a>
       <a href="Curriculum_Valentyn_Haidukov.pdf" target="_blank" class="btn btn-outline" title="Apri il file a schermo intero nel browser">
-        📄 Apri PDF a Schermo Intero
+        <svg class="btn-svg" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg> Apri PDF a Schermo Intero
       </a>
 
       <a href="https://www.linkedin.com/in/valentyn-haidukov" target="_blank" class="btn btn-outline">
-        💼 Profilo LinkedIn
+        <svg class="btn-svg" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg> Profilo LinkedIn
       </a>
       <a href="https://github.com/HV94" target="_blank" class="btn btn-outline">
-        🐙 GitHub (@HV94)
+        <svg class="btn-svg" viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg> GitHub (@HV94)
       </a>
 
     </div>
@@ -865,7 +889,7 @@
 
       <div class="section-title">
 
-        <span>🏅</span> Certificazioni Ufficiali &amp; Riconoscimenti
+        <svg style="width: 22px; height: 22px; stroke: #38bdf8; stroke-width: 2; fill: none; vertical-align: -4px; margin-right: 6px;" viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg> Certificazioni Ufficiali &amp; Riconoscimenti
 
       </div>
 
@@ -880,7 +904,7 @@
         <div style="position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #ef4444, #f97316);"></div>
         <div style="display: flex; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
           <div style="display: flex; align-items: center; gap: 1rem;">
-            <div style="width: 52px; height: 52px; border-radius: 12px; background: rgba(239, 68, 68, 0.15); border: 1px solid rgba(239, 68, 68, 0.3); display: flex; align-items: center; justify-content: center; font-size: 1.8rem; flex-shrink: 0;">🔒</div>
+            <div style="width: 52px; height: 52px; border-radius: 12px; background: rgba(239, 68, 68, 0.15); border: 1px solid rgba(239, 68, 68, 0.3); display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><svg style="width: 26px; height: 26px; stroke: #f87171; stroke-width: 2; fill: none;" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
             <div>
               <h3 style="font-size: 1.25rem; font-weight: 700; color: #fff;">Cybersecurity and Cloud Fundamentals 1.0</h3>
               <div style="font-size: 0.85rem; color: #f87171; font-weight: 600;">Fortinet Training Institute • FCF 1.0 • Rilasciata a Novembre 2026</div>
@@ -908,7 +932,7 @@
         <div style="position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #3b82f6, #06b6d4);"></div>
         <div style="display: flex; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
           <div style="display: flex; align-items: center; gap: 1rem;">
-            <div style="width: 52px; height: 52px; border-radius: 12px; background: rgba(59, 130, 246, 0.15); border: 1px solid rgba(59, 130, 246, 0.3); display: flex; align-items: center; justify-content: center; font-size: 1.8rem; flex-shrink: 0;">☁️</div>
+            <div style="width: 52px; height: 52px; border-radius: 12px; background: rgba(59, 130, 246, 0.15); border: 1px solid rgba(59, 130, 246, 0.3); display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><svg style="width: 26px; height: 26px; stroke: #60a5fa; stroke-width: 2; fill: none;" viewBox="0 0 24 24"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg></div>
             <div>
               <h3 style="font-size: 1.25rem; font-weight: 700; color: #fff;">Microsoft 365 Tenant Administration</h3>
               <div style="font-size: 0.85rem; color: #60a5fa; font-weight: 600;">Microsoft Learn • Percorso Ufficiale MS-102 • Rilasciata a Novembre 2026</div>
@@ -936,7 +960,7 @@
         <div style="position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #0ea5e9, #10b981);"></div>
         <div style="display: flex; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
           <div style="display: flex; align-items: center; gap: 1rem;">
-            <div style="width: 52px; height: 52px; border-radius: 12px; background: rgba(14, 165, 233, 0.15); border: 1px solid rgba(14, 165, 233, 0.3); display: flex; align-items: center; justify-content: center; font-size: 1.8rem; flex-shrink: 0;">💻</div>
+            <div style="width: 52px; height: 52px; border-radius: 12px; background: rgba(14, 165, 233, 0.15); border: 1px solid rgba(14, 165, 233, 0.3); display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><svg style="width: 26px; height: 26px; stroke: #38bdf8; stroke-width: 2; fill: none;" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
             <div>
               <h3 style="font-size: 1.25rem; font-weight: 700; color: #fff;">Gestione &amp; Supporto Windows 11 Pro e Intune</h3>
               <div style="font-size: 0.85rem; color: #38bdf8; font-weight: 600;">Microsoft Learn • IT Support &amp; Endpoint Management • Novembre 2026</div>
@@ -964,7 +988,7 @@
         <div style="position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #6366f1, #38bdf8);"></div>
         <div style="display: flex; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
           <div style="display: flex; align-items: center; gap: 1rem;">
-            <div style="width: 52px; height: 52px; border-radius: 12px; background: rgba(99, 102, 241, 0.15); border: 1px solid rgba(99, 102, 241, 0.3); display: flex; align-items: center; justify-content: center; font-size: 1.8rem; flex-shrink: 0;">🌐</div>
+            <div style="width: 52px; height: 52px; border-radius: 12px; background: rgba(99, 102, 241, 0.15); border: 1px solid rgba(99, 102, 241, 0.3); display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><svg style="width: 26px; height: 26px; stroke: #818cf8; stroke-width: 2; fill: none;" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10z"/></svg></div>
             <div>
               <h3 style="font-size: 1.25rem; font-weight: 700; color: #fff;">Networking Basics</h3>
               <div style="font-size: 0.85rem; color: #818cf8; font-weight: 600;">Cisco Networking Academy • Rilasciata a Novembre 2026</div>
@@ -992,7 +1016,7 @@
         <div style="position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #10b981, #06b6d4);"></div>
         <div style="display: flex; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
           <div style="display: flex; align-items: center; gap: 1rem;">
-            <div style="width: 52px; height: 52px; border-radius: 12px; background: rgba(16, 185, 129, 0.15); border: 1px solid rgba(16, 185, 129, 0.3); display: flex; align-items: center; justify-content: center; font-size: 1.8rem; flex-shrink: 0;">🛡️</div>
+            <div style="width: 52px; height: 52px; border-radius: 12px; background: rgba(16, 185, 129, 0.15); border: 1px solid rgba(16, 185, 129, 0.3); display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><svg style="width: 26px; height: 26px; stroke: #34d399; stroke-width: 2; fill: none;" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
             <div>
               <h3 style="font-size: 1.25rem; font-weight: 700; color: #fff;">Introduction to Cybersecurity</h3>
               <div style="font-size: 0.85rem; color: #34d399; font-weight: 600;">Cisco Networking Academy • Rilasciata a Novembre 2026</div>
@@ -1020,7 +1044,7 @@
         <div style="position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #38bdf8, #2563eb);"></div>
         <div style="display: flex; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
           <div style="display: flex; align-items: center; gap: 1rem;">
-            <div style="width: 52px; height: 52px; border-radius: 12px; background: rgba(56, 189, 248, 0.15); border: 1px solid rgba(56, 189, 248, 0.3); display: flex; align-items: center; justify-content: center; font-size: 1.8rem; flex-shrink: 0;">🛠️</div>
+            <div style="width: 52px; height: 52px; border-radius: 12px; background: rgba(56, 189, 248, 0.15); border: 1px solid rgba(56, 189, 248, 0.3); display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><svg style="width: 26px; height: 26px; stroke: #38bdf8; stroke-width: 2; fill: none;" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg></div>
             <div>
               <h3 style="font-size: 1.25rem; font-weight: 700; color: #fff;">Computer Hardware Basics</h3>
               <div style="font-size: 0.85rem; color: #38bdf8; font-weight: 600;">Cisco Networking Academy • Rilasciata a Novembre 2026</div>
@@ -1054,7 +1078,7 @@
 
       <div class="section-title">
 
-        <span>🚀</span> Software & Progetti Interattivi Live
+        <svg style="width: 22px; height: 22px; stroke: #38bdf8; stroke-width: 2; fill: none; vertical-align: -4px; margin-right: 6px;" viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg> Software &amp; Progetti Interattivi Live
 
       </div>
 
@@ -1072,7 +1096,7 @@
 
         <div class="project-header">
 
-          <div class="project-icon-box">🛒</div>
+          <div class="project-icon-box"><svg style="width: 24px; height: 24px; stroke: #fb923c; stroke-width: 2; fill: none;" viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></div>
 
           <div>
 
@@ -1106,7 +1130,7 @@
 
         <div class="project-header">
 
-          <div class="project-icon-box">💻</div>
+          <div class="project-icon-box"><svg style="width: 24px; height: 24px; stroke: #38bdf8; stroke-width: 2; fill: none;" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
 
           <div>
 
@@ -1140,7 +1164,7 @@
 
         <div class="project-header">
 
-          <div class="project-icon-box">📚</div>
+          <div class="project-icon-box"><svg style="width: 24px; height: 24px; stroke: #34d399; stroke-width: 2; fill: none;" viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></div>
 
           <div>
 
@@ -1174,7 +1198,7 @@
 
         <div class="project-header">
 
-          <div class="project-icon-box">⚡</div>
+          <div class="project-icon-box"><svg style="width: 24px; height: 24px; stroke: #a78bfa; stroke-width: 2; fill: none;" viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
 
           <div>
 
