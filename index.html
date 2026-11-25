@@ -497,6 +497,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 12px;
       margin-bottom: 1.25rem;
       padding-bottom: 1rem;
       border-bottom: 1px solid #bcaa96;
@@ -507,11 +508,38 @@
 
     .window-controls {
       display: flex;
-      gap: 6px;
-      margin-left: -6px;
-      margin-right: 12px;
+      gap: 7px;
+      align-items: center;
       flex-shrink: 0;
     }
+
+    .viewer-title {
+      flex: 1;
+      text-align: center;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      min-width: 0;
+    }
+
+    .viewer-download-btn {
+      color: #b87b58;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      flex-shrink: 0;
+      white-space: nowrap;
+      transition: color 0.2s ease;
+    }
+
+    .viewer-download-btn:hover {
+      color: #8c5d42;
+    }
+
+    .desktop-only { display: inline; }
+    .mobile-only { display: none; }
 
     .window-dot {
       width: 11px;
@@ -618,11 +646,14 @@
       .section-subtitle {
         text-align: center !important;
       }
+      .desktop-only { display: none !important; }
+      .mobile-only { display: inline !important; }
       .viewer-container {
         padding: 1.25rem 1rem !important;
       }
       .viewer-header {
-        font-size: 0.8rem !important;
+        font-size: 0.82rem !important;
+        gap: 8px !important;
       }
     }
 </style>
@@ -1103,9 +1134,9 @@
 
       </div>
 
-      <span>Curriculum Vitae Ufficiale (Formato A4 con QR Code)</span>
+      <span class="viewer-title">Curriculum Vitae <span class="desktop-only">Ufficiale (Formato A4 con QR Code)</span><span class="mobile-only">A4</span></span>
 
-      <a id="btnDownloadBottom" href="Curriculum_Valentyn_Haidukov.pdf" download="Curriculum_Valentyn_Haidukov.pdf" style="color: #b87b58; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;"><svg style="width: 14px; height: 14px; stroke: currentColor; stroke-width: 2; fill: none;" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Scarica PDF (A4)</a>
+      <a id="btnDownloadBottom" href="Curriculum_Valentyn_Haidukov.pdf" download="Curriculum_Valentyn_Haidukov.pdf" class="viewer-download-btn"><svg style="width: 14px; height: 14px; stroke: currentColor; stroke-width: 2; fill: none;" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> <span>Scarica PDF<span class="desktop-only"> (A4)</span></span></a>
 
     </div>
 
