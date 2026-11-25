@@ -7,7 +7,7 @@
   <meta charset="UTF-8">
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#f4f5f7">
+  <meta name="theme-color" content="#f7f5f0">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
@@ -46,20 +46,17 @@
 
   <style>
     :root {
-      --primary: #b87b58;
-      --primary-hover: #a36946;
-      --bg: #f4f5f7;
+      --bg: #f7f5f0;
       --surface: #ffffff;
       --surface-elevated: #ffffff;
-      --border: #e2e8f0;
-      --border-hover: #cbd5e1;
-      --text: #1e293b;
-      --text-muted: #64748b;
-      --accent-terracotta: #b87b58;
-      --accent-green: #059669;
-      --accent-cyan: #0284c7;
-      --accent-orange: #d97706;
-      --accent-purple: #7c3aed;
+      --border: #e7e2d7;
+      --border-hover: #dcd5c9;
+      --text: #2b2520;
+      --text-muted: #7d7266;
+      --text-body: #554d46;
+      --primary: #b87b58;
+      --primary-hover: #a36946;
+      --pill-bg: #eae5db;
     }
 
     * {
@@ -71,7 +68,6 @@
     body {
       font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
       background-color: var(--bg);
-      background-image: linear-gradient(180deg, #f8fafc 0%, #edf0f5 100%);
       color: var(--text);
       min-height: 100vh;
       display: flex;
@@ -97,7 +93,7 @@
       border-radius: 50%;
       object-fit: cover;
       border: 3px solid #b87b58;
-      box-shadow: 0 4px 16px rgba(184, 123, 88, 0.22);
+      box-shadow: 0 4px 14px rgba(184, 123, 88, 0.28);
       margin-bottom: 1.25rem;
       transition: transform 0.3s ease;
     }
@@ -111,7 +107,7 @@
       align-items: center;
       gap: 0.5rem;
       background: #ecfdf5;
-      color: #065f46;
+      color: #047857;
       border: 1px solid #a7f3d0;
       padding: 0.35rem 0.95rem;
       border-radius: 9999px;
@@ -140,15 +136,15 @@
       font-weight: 800;
       margin-bottom: 0.4rem;
       letter-spacing: -0.03em;
-      color: #1e293b;
+      color: #2b2520;
     }
 
     .subtitle {
       font-size: 1.05rem;
-      color: var(--text-muted);
+      color: #7d7266;
       max-width: 680px;
       margin-bottom: 1.5rem;
-      font-weight: 500;
+      font-weight: 600;
     }
 
     /* Key Metrics Bar */
@@ -169,17 +165,17 @@
       align-items: center;
       gap: 0.45rem;
       background: #ffffff;
-      border: 1px solid #e2e8f0;
-      box-shadow: 0 2px 6px rgba(15, 23, 42, 0.04);
+      border: 1px solid #e7e2d7;
+      box-shadow: 0 2px 6px rgba(43, 37, 32, 0.04);
       padding: 0.45rem 0.9rem;
       border-radius: 8px;
       font-size: 0.82rem;
-      color: #475569;
+      color: #554d46;
       text-align: center;
     }
 
     .metric-badge strong {
-      color: #0f172a;
+      color: #2b2520;
     }
 
     .badge-svg {
@@ -219,7 +215,7 @@
       align-items: center;
       gap: 0.5rem;
       padding: 0.75rem 1.35rem;
-      border-radius: 10px;
+      border-radius: 8px;
       font-weight: 600;
       font-size: 0.9rem;
       text-decoration: none;
@@ -230,57 +226,57 @@
     .btn-primary {
       background: #b87b58;
       color: #ffffff;
-      border: 1px solid #a36946;
-      box-shadow: 0 3px 10px rgba(184, 123, 88, 0.25);
+      border: 1px solid #9e6443;
+      box-shadow: 0 2px 8px rgba(184, 123, 88, 0.25);
     }
 
     .btn-primary:hover {
       background: #a36946;
       transform: translateY(-2px);
-      box-shadow: 0 6px 16px rgba(184, 123, 88, 0.35);
+      box-shadow: 0 5px 14px rgba(184, 123, 88, 0.35);
     }
 
     .btn-outline {
       background-color: #ffffff;
-      color: #334155;
-      border: 1px solid #cbd5e1;
-      box-shadow: 0 2px 5px rgba(15, 23, 42, 0.04);
+      color: #2b2520;
+      border: 1px solid #dcd5c9;
+      box-shadow: 0 1px 4px rgba(43, 37, 32, 0.04);
     }
 
     .btn-outline:hover {
-      background-color: #f8fafc;
-      border-color: #94a3b8;
-      color: #0f172a;
+      background-color: #faf8f5;
+      border-color: #b87b58;
+      color: #2b2520;
       transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+      box-shadow: 0 4px 10px rgba(43, 37, 32, 0.08);
     }
 
     .btn-call {
       background: #ffffff;
       color: #047857;
       border: 1px solid #a7f3d0;
-      box-shadow: 0 2px 5px rgba(15, 23, 42, 0.04);
+      box-shadow: 0 1px 4px rgba(43, 37, 32, 0.04);
     }
 
     .btn-call:hover {
       background: #f0fdf4;
       border-color: #34d399;
       transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(16, 185, 129, 0.15);
+      box-shadow: 0 4px 10px rgba(16, 185, 129, 0.15);
     }
 
     .btn-email {
       background: #ffffff;
-      color: #1d4ed8;
-      border: 1px solid #bfdbfe;
-      box-shadow: 0 2px 5px rgba(15, 23, 42, 0.04);
+      color: #2b2520;
+      border: 1px solid #dcd5c9;
+      box-shadow: 0 1px 4px rgba(43, 37, 32, 0.04);
     }
 
     .btn-email:hover {
-      background: #eff6ff;
-      border-color: #60a5fa;
+      background: #faf8f5;
+      border-color: #b87b58;
       transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.15);
+      box-shadow: 0 4px 10px rgba(184, 123, 88, 0.15);
     }
 
     /* Sections */
@@ -297,55 +293,56 @@
       text-align: center;
       gap: 0.35rem;
       margin-bottom: 1.5rem;
-      border-bottom: 2px solid #e2e8f0;
+      border-bottom: 2px solid #b87b58;
       padding-bottom: 0.85rem;
     }
 
     .section-title {
       font-size: 1.25rem;
       font-weight: 800;
-      color: #1e293b;
+      color: #2b2520;
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 0.5rem;
+      letter-spacing: 0.02em;
     }
 
     .section-subtitle {
       font-size: 0.85rem;
-      color: var(--text-muted);
+      color: #7d7266;
     }
 
     /* Certifications Grid */
     .cert-card {
       background: #ffffff !important;
-      border: 1px solid #e2e8f0 !important;
-      border-radius: 16px;
+      border: 1px solid #e7e2d7 !important;
+      border-radius: 14px;
       padding: 1.5rem;
       display: flex;
       flex-direction: column;
       gap: 1rem;
       position: relative;
       overflow: hidden;
-      box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04), 0 1px 3px rgba(15, 23, 42, 0.03);
-      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 3px 12px rgba(43, 37, 32, 0.05);
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     .cert-card:hover {
       transform: translateY(-3px);
-      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08), 0 2px 6px rgba(15, 23, 42, 0.04);
-      border-color: #cbd5e1 !important;
+      box-shadow: 0 8px 20px rgba(43, 37, 32, 0.08);
+      border-color: #dcd5c9 !important;
     }
 
     .cert-card h3 {
       font-size: 1.25rem;
       font-weight: 700;
-      color: #1e293b !important;
+      color: #2b2520 !important;
     }
 
     .cert-card p {
       font-size: 0.9rem;
-      color: #475569 !important;
+      color: #554d46 !important;
       line-height: 1.5;
     }
 
@@ -358,8 +355,8 @@
 
     .project-card {
       background: #ffffff;
-      border: 1px solid #e2e8f0;
-      border-radius: 16px;
+      border: 1px solid #e7e2d7;
+      border-radius: 14px;
       padding: 1.5rem;
       text-decoration: none;
       color: var(--text);
@@ -367,10 +364,10 @@
       flex-direction: column;
       justify-content: space-between;
       gap: 1rem;
-      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
       position: relative;
       overflow: hidden;
-      box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04), 0 1px 3px rgba(15, 23, 42, 0.03);
+      box-shadow: 0 3px 12px rgba(43, 37, 32, 0.05);
     }
 
     .project-card::before {
@@ -380,35 +377,20 @@
       left: 0;
       right: 0;
       height: 3px;
-      background: transparent;
-      transition: background 0.3s ease;
+      background: #b87b58;
+      opacity: 0;
+      transition: opacity 0.25s ease;
     }
 
-    .project-card.card-orange:hover::before {
-      background: linear-gradient(90deg, #ea580c, #f97316);
-    }
-
-    .project-card.card-cyan:hover::before {
-      background: linear-gradient(90deg, #0284c7, #38bdf8);
-    }
-
-    .project-card.card-blue:hover::before {
-      background: linear-gradient(90deg, #2563eb, #60a5fa);
-    }
-
-    .project-card.card-green:hover::before {
-      background: linear-gradient(90deg, #059669, #34d399);
-    }
-
-    .project-card.card-purple:hover::before {
-      background: linear-gradient(90deg, #7c3aed, #a78bfa);
+    .project-card:hover::before {
+      opacity: 1;
     }
 
     .project-card:hover {
       background: #ffffff;
       transform: translateY(-4px);
-      border-color: #cbd5e1;
-      box-shadow: 0 14px 28px rgba(15, 23, 42, 0.08), 0 3px 8px rgba(15, 23, 42, 0.04);
+      border-color: #dcd5c9;
+      box-shadow: 0 10px 24px rgba(43, 37, 32, 0.08);
     }
 
     .project-header {
@@ -420,24 +402,20 @@
     .project-icon-box {
       width: 44px;
       height: 44px;
-      border-radius: 10px;
+      border-radius: 8px;
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 1.5rem;
       flex-shrink: 0;
+      background: #faf8f5;
+      border: 1px solid #e7e2d7;
     }
-
-    .project-card.card-orange .project-icon-box { background: #fff7ed; border: 1px solid #fed7aa; }
-    .project-card.card-cyan .project-icon-box { background: #f0f9ff; border: 1px solid #bae6fd; }
-    .project-card.card-blue .project-icon-box { background: #eff6ff; border: 1px solid #bfdbfe; }
-    .project-card.card-green .project-icon-box { background: #ecfdf5; border: 1px solid #a7f3d0; }
-    .project-card.card-purple .project-icon-box { background: #f5f3ff; border: 1px solid #ddd6fe; }
 
     .project-card h3 {
       font-size: 1.15rem;
       font-weight: 700;
-      color: #1e293b;
+      color: #2b2520;
       margin-bottom: 0.2rem;
     }
 
@@ -446,11 +424,12 @@
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 0.05em;
+      color: #b87b58;
     }
 
     .project-card p {
       font-size: 0.85rem;
-      color: #475569;
+      color: #554d46;
       line-height: 1.45;
     }
 
@@ -462,11 +441,12 @@
 
     .feature-pill {
       font-size: 0.72rem;
-      background: #f8fafc;
-      border: 1px solid #e2e8f0;
+      background: #eae5db;
+      border: 1px solid #dcd5c9;
       padding: 0.2rem 0.5rem;
       border-radius: 6px;
-      color: #475569;
+      color: #554d46;
+      font-weight: 500;
     }
 
     .project-cta {
@@ -476,6 +456,7 @@
       align-items: center;
       gap: 0.4rem;
       margin-top: 0.25rem;
+      color: #b87b58;
       transition: gap 0.2s ease;
     }
 
@@ -483,21 +464,15 @@
       gap: 0.65rem;
     }
 
-    .project-card.card-orange .project-cta { color: #ea580c; }
-    .project-card.card-cyan .project-cta { color: #0284c7; }
-    .project-card.card-blue .project-cta { color: #2563eb; }
-    .project-card.card-green .project-cta { color: #059669; }
-    .project-card.card-purple .project-cta { color: #7c3aed; }
-
     /* CV Preview Container with Window Dots */
     .viewer-container {
       width: 100%;
       max-width: 960px;
       background: #ffffff;
-      border: 1px solid #e2e8f0;
-      border-radius: 18px;
+      border: 1px solid #e7e2d7;
+      border-radius: 16px;
       padding: 1.5rem;
-      box-shadow: 0 16px 36px rgba(15, 23, 42, 0.08), 0 3px 8px rgba(15, 23, 42, 0.04);
+      box-shadow: 0 10px 28px rgba(43, 37, 32, 0.07);
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -510,10 +485,10 @@
       justify-content: space-between;
       margin-bottom: 1.25rem;
       padding-bottom: 1rem;
-      border-bottom: 1px solid #e2e8f0;
+      border-bottom: 1px solid #e7e2d7;
       font-size: 0.875rem;
-      color: #475569;
-      font-weight: 500;
+      color: #554d46;
+      font-weight: 600;
     }
 
     .window-controls {
@@ -535,21 +510,21 @@
       width: 100%;
       height: auto;
       border-radius: 10px;
-      border: 1px solid #e2e8f0;
-      box-shadow: 0 4px 16px rgba(15, 23, 42, 0.06);
+      border: 1px solid #e7e2d7;
+      box-shadow: 0 4px 14px rgba(43, 37, 32, 0.06);
     }
 
     .footer {
       margin-top: 3.5rem;
       text-align: center;
-      color: #64748b;
+      color: #7d7266;
       font-size: 0.85rem;
     }
 
     .footer a {
       color: #b87b58;
       text-decoration: none;
-      font-weight: 500;
+      font-weight: 600;
     }
 
     .footer a:hover {
@@ -715,7 +690,7 @@
           <div style="display: flex; align-items: center; gap: 1rem;">
             <div style="width: 52px; height: 52px; border-radius: 12px; background: rgba(239, 68, 68, 0.15); border: 1px solid rgba(239, 68, 68, 0.3); display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><svg style="width: 26px; height: 26px; stroke: #f87171; stroke-width: 2; fill: none;" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
             <div>
-              <h3 style="font-size: 1.25rem; font-weight: 700; color: #1e293b;">Cybersecurity and Cloud Fundamentals</h3>
+              <h3 style="font-size: 1.25rem; font-weight: 700; color: #2b2520;">Cybersecurity and Cloud Fundamentals</h3>
               <div style="font-size: 0.85rem; color: #f87171; font-weight: 600;">Fortinet Training Institute • Attestato Ufficiale • 2026</div>
             </div>
           </div>
@@ -743,7 +718,7 @@
           <div style="display: flex; align-items: center; gap: 1rem;">
             <div style="width: 52px; height: 52px; border-radius: 12px; background: rgba(59, 130, 246, 0.15); border: 1px solid rgba(59, 130, 246, 0.3); display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><svg style="width: 26px; height: 26px; stroke: #60a5fa; stroke-width: 2; fill: none;" viewBox="0 0 24 24"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg></div>
             <div>
-              <h3 style="font-size: 1.25rem; font-weight: 700; color: #1e293b;">Microsoft 365 Tenant Administration</h3>
+              <h3 style="font-size: 1.25rem; font-weight: 700; color: #2b2520;">Microsoft 365 Tenant Administration</h3>
               <div style="font-size: 0.85rem; color: #60a5fa; font-weight: 600;">Microsoft Learn • Percorso Formativo MS-102 • Rilasciata nel 2026</div>
             </div>
           </div>
@@ -771,7 +746,7 @@
           <div style="display: flex; align-items: center; gap: 1rem;">
             <div style="width: 52px; height: 52px; border-radius: 12px; background: rgba(14, 165, 233, 0.15); border: 1px solid rgba(14, 165, 233, 0.3); display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><svg style="width: 26px; height: 26px; stroke: #b87b58; stroke-width: 2; fill: none;" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
             <div>
-              <h3 style="font-size: 1.25rem; font-weight: 700; color: #1e293b;">Sistemi Operativi &amp; Supporto IT</h3>
+              <h3 style="font-size: 1.25rem; font-weight: 700; color: #2b2520;">Sistemi Operativi &amp; Supporto IT</h3>
               <div style="font-size: 0.85rem; color: #38bdf8; font-weight: 600;">Microsoft Learn &amp; Formazione Tecnica • Assistenza &amp; Troubleshooting • 2026</div>
             </div>
           </div>
@@ -800,7 +775,7 @@
           <div style="display: flex; align-items: center; gap: 1rem;">
             <div style="width: 52px; height: 52px; border-radius: 12px; background: rgba(99, 102, 241, 0.15); border: 1px solid rgba(99, 102, 241, 0.3); display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><svg style="width: 26px; height: 26px; stroke: #818cf8; stroke-width: 2; fill: none;" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10z"/></svg></div>
             <div>
-              <h3 style="font-size: 1.25rem; font-weight: 700; color: #1e293b;">Networking Basics</h3>
+              <h3 style="font-size: 1.25rem; font-weight: 700; color: #2b2520;">Networking Basics</h3>
               <div style="font-size: 0.85rem; color: #818cf8; font-weight: 600;">Cisco Networking Academy • Rilasciata nel 2026</div>
             </div>
           </div>
@@ -828,7 +803,7 @@
           <div style="display: flex; align-items: center; gap: 1rem;">
             <div style="width: 52px; height: 52px; border-radius: 12px; background: rgba(16, 185, 129, 0.15); border: 1px solid rgba(16, 185, 129, 0.3); display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><svg style="width: 26px; height: 26px; stroke: #34d399; stroke-width: 2; fill: none;" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
             <div>
-              <h3 style="font-size: 1.25rem; font-weight: 700; color: #1e293b;">Introduction to Cybersecurity</h3>
+              <h3 style="font-size: 1.25rem; font-weight: 700; color: #2b2520;">Introduction to Cybersecurity</h3>
               <div style="font-size: 0.85rem; color: #34d399; font-weight: 600;">Cisco Networking Academy • Rilasciata nel 2026</div>
             </div>
           </div>
@@ -856,7 +831,7 @@
           <div style="display: flex; align-items: center; gap: 1rem;">
             <div style="width: 52px; height: 52px; border-radius: 12px; background: rgba(56, 189, 248, 0.15); border: 1px solid rgba(56, 189, 248, 0.3); display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><svg style="width: 26px; height: 26px; stroke: #b87b58; stroke-width: 2; fill: none;" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg></div>
             <div>
-              <h3 style="font-size: 1.25rem; font-weight: 700; color: #1e293b;">Computer Hardware Basics</h3>
+              <h3 style="font-size: 1.25rem; font-weight: 700; color: #2b2520;">Computer Hardware Basics</h3>
               <div style="font-size: 0.85rem; color: #38bdf8; font-weight: 600;">Cisco Networking Academy • Rilasciata nel 2026</div>
             </div>
           </div>
