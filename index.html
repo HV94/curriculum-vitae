@@ -534,11 +534,12 @@
       text-decoration: underline;
     }
 
-    @media (max-width: 640px) {
-      html, body {
+    html, body {
       background-color: var(--bg);
     }
-    body {
+
+    @media (max-width: 640px) {
+      body {
         padding: 1.5rem 0.75rem 3rem !important;
         overflow-x: hidden !important;
       }
@@ -552,8 +553,9 @@
         margin-bottom: 0.25rem !important;
       }
       .subtitle {
-        font-size: 0.9rem !important;
-        padding: 0 0.5rem !important;
+        font-size: clamp(0.72rem, 3.4vw, 0.85rem) !important;
+        padding: 0 0.25rem !important;
+        line-height: 1.35 !important;
       }
       .status-pill {
         font-size: 0.72rem !important;
